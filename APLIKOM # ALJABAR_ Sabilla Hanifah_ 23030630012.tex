@@ -1,0 +1,3115 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{book}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+\frontmatter
+
+\mainmatter
+\chapter{TUGAS APLIKASI KOMPUTER \# ALJABAR Nama : Sabilla Hanifah NJ}\label{tugas-aplikasi-komputer-aljabar-nama-sabilla-hanifah-nj}
+
+\chapter{EMT untuk Perhitungan Aljabar}\label{emt-untuk-perhitungan-aljabar}
+
+Pada notebook ini Anda belajar menggunakan EMT untuk melakukan berbagai perhitungan terkait dengan materi atau topik dalam Aljabar. Kegiatan yang harus Anda lakukan adalah sebagai berikut:
+
+\begin{itemize}
+\item
+  Membaca secara cermat dan teliti notebook ini;
+\item
+  Menerjemahkan teks bahasa Inggris ke bahasa Indonesia;
+\item
+  Mencoba contoh-contoh perhitungan (perintah EMT) dengan cara
+\item
+  meng-ENTER setiap perintah EMT yang ada (pindahkan kursor ke baris
+\item
+  perintah)
+\item
+  Jika perlu Anda dapat memodifikasi perintah yang ada dan memberikan
+\item
+  keterangan/penjelasan tambahan terkait hasilnya.
+\item
+  Menyisipkan baris-baris perintah baru untuk mengerjakan soal-soal
+\item
+  Aljabar dari file PDF yang saya berikan;
+\item
+  Memberi catatan hasilnya.
+\item
+  Jika perlu tuliskan soalnya pada teks notebook (menggunakan format
+\item
+  LaTeX).
+\item
+  Gunakan tampilan hasil semua perhitungan yang eksak atau simbolik
+\item
+  dengan format LaTeX. (Seperti contoh-contoh pada notebook ini.)
+\end{itemize}
+
+\section{Contoh pertama}\label{contoh-pertama}
+
+Menyederhanakan bentuk aljabar:
+
+\[6x^{-3}y^5\times -7x^2y^{-9}\]\textgreater\$\&6*x\textsuperscript{(-3)*y}5*-7*x\textsuperscript{2*y}(-9)
+
+\[-\frac{42}{x\,y^4}\]Menjabarkan:
+
+\[(6x^{-3}+y^5)(-7x^2-y^{-9})\]\textgreater\$\&showev('expand((6*x\textsuperscript{(-3)+y}5)*(-7*x\textsuperscript{2-y}(-9))))
+
+\[{\it expand}\left(\left(-\frac{1}{y^9}-7\,x^2\right)\,\left(y^5+
+ \frac{6}{x^3}\right)\right)=-7\,x^2\,y^5-\frac{1}{y^4}-\frac{6}{x^3
+ \,y^9}-\frac{42}{x}\]\#\# Baris Perintah
+
+Baris perintah Euler terdiri dari satu atau beberapa perintah Euler yang diikuti dengan titik koma ``;'' atau koma ``,''. Titik koma mencegah pencetakan hasil. Koma setelah perintah terakhir dapat dihilangkan.
+
+Baris perintah berikut ini hanya akan mencetak hasil dari ekspresi, bukan penugasan atau perintah format.
+
+\textgreater r:=2; h:=4; pi*r\^{}2*h/3
+
+\begin{verbatim}
+16.7551608191
+\end{verbatim}
+
+Perintah harus dipisahkan dengan tanda kosong. Baris perintah berikut ini mencetak dua hasilnya.
+
+\textgreater pi*2*r*h, \%+2*pi*r*h // Ingat tanda \% menyatakan hasil perhitungan terakhir sebelumnya
+
+\begin{verbatim}
+50.2654824574
+100.530964915
+\end{verbatim}
+
+Baris perintah dieksekusi sesuai urutan pengguna menekan tombol return. Jadi, Anda mendapatkan nilai baru setiap kali Anda mengeksekusi baris kedua.
+
+\textgreater x := 1;
+
+\textgreater x := cos(x) // nilai cosinus (x dalam radian)
+
+\begin{verbatim}
+0.540302305868
+\end{verbatim}
+
+\textgreater x := cos(x)
+
+\begin{verbatim}
+0.857553215846
+\end{verbatim}
+
+Jika dua baris dihubungkan dengan ``\ldots{}'', kedua baris tersebut akan selalu dieksekusi secara bersamaan.
+
+\textgreater x := 1.5; \ldots{}\\
+\textgreater{} x := (x+2/x)/2, x := (x+2/x)/2, x := (x+2/x)/2,
+
+\begin{verbatim}
+1.41666666667
+1.41421568627
+1.41421356237
+\end{verbatim}
+
+Ini juga merupakan cara yang baik untuk membagi perintah yang panjang menjadi dua baris atau lebih. Anda dapat menekan Ctrl+Return untuk membagi baris menjadi dua pada posisi kursor saat ini, atau Ctlr+Back untuk menggabungkan kedua baris.
+
+Untuk melipat semua multi-baris, tekan Ctrl+L. Kemudian garis-garis berikutnya hanya akan terlihat, jika salah satu dari mereka memiliki fokus. Untuk melipat satu baris multi-baris, mulai baris pertama dengan ``\%+''.
+
+\textgreater\%+ x=4+5; \ldots{}\\
+\textgreater{} // This line will not be visible once the cursor is off the line
+
+Garis yang dimulai dengan \%\% tidak akan terlihat sama sekali.
+
+\begin{verbatim}
+81
+\end{verbatim}
+
+Euler mendukung perulangan dalam baris perintah, selama perulangan tersebut masuk ke dalam satu baris tunggal atau beberapa baris. Dalam program, tentu saja pembatasan ini tidak berlaku. Untuk informasi lebih lanjut, baca pengantar berikut ini.
+
+\textgreater x=1; for i=1 to 5; x := (x+2/x)/2, end; // menghitung akar 2
+
+\begin{verbatim}
+1.5
+1.41666666667
+1.41421568627
+1.41421356237
+1.41421356237
+\end{verbatim}
+
+Tidak masalah untuk menggunakan multi-baris. Pastikan baris diakhiri dengan ``\ldots{}''.
+
+\textgreater x := 1.5; // comments go here before the \ldots{}\\
+\textgreater{} repeat xnew:=(x+2/x)/2; until xnew\textasciitilde=x; \ldots{}\\
+\textgreater{} x := xnew; \ldots{}\\
+\textgreater{} end; \ldots{}\\
+\textgreater{} x,
+
+\begin{verbatim}
+1.41421356237
+\end{verbatim}
+
+Struktur bersyarat juga bisa digunakan.
+
+\textgreater if E\textsuperscript{pi\textgreater pi}E; then ``Thought so!'', endif;
+
+\begin{verbatim}
+Thought so!
+\end{verbatim}
+
+Ketika Anda menjalankan perintah, kursor dapat berada di posisi mana pun dalam baris perintah. Anda dapat kembali ke perintah sebelumnya atau melompat ke perintah berikutnya dengan tombol panah. Atau Anda dapat mengklik bagian komentar di atas perintah untuk membuka perintah tersebut.
+
+Ketika Anda menggerakkan kursor di sepanjang baris, pasangan tanda kurung atau tanda kurung pembuka dan penutup akan disorot. Juga, perhatikan baris status. Setelah tanda kurung pembuka dari fungsi sqrt(), baris status akan menampilkan teks bantuan untuk fungsi tersebut. Jalankan perintah dengan tombol return.
+
+\textgreater sqrt(sin(10°)/cos(20°))
+
+\begin{verbatim}
+0.429875017772
+\end{verbatim}
+
+Untuk melihat bantuan untuk perintah terbaru, buka jendela bantuan dengan F1. Di sana, Anda dapat memasukkan teks yang akan dicari. Pada baris kosong, bantuan untuk jendela bantuan akan ditampilkan. Anda dapat menekan escape untuk mengosongkan baris, atau menutup jendela bantuan.
+
+Anda dapat mengklik dua kali pada perintah apa pun untuk membuka bantuan untuk perintah ini. Coba klik dua kali perintah exp di bawah ini pada baris perintah.
+
+\textgreater exp(log(2.5))
+
+\begin{verbatim}
+2.5
+\end{verbatim}
+
+Anda juga dapat menyalin dan menempel di Euler. Gunakan Ctrl-C dan Ctrl-V untuk ini. Untuk menandai teks, seret mouse atau gunakan shift bersamaan dengan tombol kursor. Selain itu, Anda dapat menyalin tanda kurung yang disorot.
+
+\begin{verbatim}
+58.9048622548
+\end{verbatim}
+
+\textgreater{}
+
+\section{Sintaksis Dasar}\label{sintaksis-dasar}
+
+Euler mengetahui fungsi matematika yang biasa. Seperti yang telah Anda lihat di atas, fungsi trigonometri bekerja dalam radian atau derajat. Untuk mengonversi ke derajat, tambahkan simbol derajat (dengan tombol F7) ke nilai, atau gunakan fungsi rad(x). Fungsi akar kuadrat disebut sqrt dalam Euler. Tentu saja, x\^{}(1/2) juga dapat digunakan.
+
+Untuk mengatur variabel, gunakan ``='' atau ``:=''. Demi kejelasan, pengantar ini menggunakan bentuk yang terakhir. Spasi tidak menjadi masalah. Tetapi spasi antar perintah diharapkan.
+
+Beberapa perintah dalam satu baris dipisahkan dengan ``,'' atau ``;''. Titik koma menekan output dari perintah. Pada akhir baris perintah, ``,'' diasumsikan, jika ``;'' tidak ada.
+
+\textgreater g:=9.81; t:=2.5; 1/2*g*t\^{}2
+
+\begin{verbatim}
+30.65625
+\end{verbatim}
+
+EMT menggunakan sintaks pemrograman untuk ekspresi. Untuk memasukkan
+
+Anda harus mengatur tanda kurung yang benar dan menggunakan / untuk pecahan. Perhatikan tanda kurung yang disorot untuk mendapatkan bantuan. Perhatikan bahwa konstanta Euler e diberi nama E dalam EMT.
+
+\textgreater E\^{}2*(1/(3+4*log(0.6))+1/7)
+
+\begin{verbatim}
+8.77908249441
+\end{verbatim}
+
+Untuk menghitung ekspresi yang rumit seperti
+
+lateks: \left(\frac{\frac17 + \frac18 + 2}{\frac13 + \frac12}\right)\^{}2 \pi
+
+Anda harus memasukkannya dalam bentuk baris.orm.
+
+\textgreater((1/7 + 1/8 + 2) / (1/3 + 1/2))\^{}2 * pi
+
+\begin{verbatim}
+23.2671801626
+\end{verbatim}
+
+Letakkan tanda kurung di sekitar sub-ekspresi yang perlu dihitung terlebih dahulu. EMT membantu Anda dengan menyorot ekspresi yang diselesaikan oleh tanda kurung penutup. Anda juga harus memasukkan nama ``pi'' untuk huruf Yunani pi.
+
+Hasil dari perhitungan ini adalah angka floating point. Secara default dicetak dengan akurasi sekitar 12 digit. Pada baris perintah berikut, kita juga mempelajari bagaimana kita dapat merujuk ke hasil sebelumnya dalam baris yang sama.
+
+\textgreater1/3+1/7, fraction \%
+
+\begin{verbatim}
+0.47619047619
+10/21
+\end{verbatim}
+
+Perintah Euler dapat berupa ekspresi atau perintah primitif. Ekspresi terbuat dari operator dan fungsi. Jika perlu, ekspresi tersebut harus mengandung tanda kurung untuk memaksa urutan eksekusi yang benar. Jika ragu, mengatur tanda kurung adalah ide yang bagus. Perhatikan bahwa EMT menampilkan tanda kurung pembuka dan penutup saat mengedit baris perintah.
+
+\textgreater(cos(pi/4)+1)\textsuperscript{3*(sin(pi/4)+1)}2
+
+\begin{verbatim}
+14.4978445072
+\end{verbatim}
+
+Operator numerik Euler meliputi
+
+\begin{itemize}
+\tightlist
+\item
+  unary atau operator plus\\
+\item
+  unary atau operator minus\\
+  *, /\\
+  . produk matriks\\
+  pangkat a\^{}b untuk a positif atau bilangan bulat b (a**b juga bisa
+\end{itemize}
+
+digunakan)
+
+n! operator faktorial
+
+dan masih banyak lagi.
+
+Berikut adalah beberapa fungsi yang mungkin Anda perlukan. Masih banyak lagi.
+
+sin, cos, tan, atan, asin, acos, rad, deg\\
+log, exp, log10, sqrt, logbase\\
+bin, logbin, logfac, mod, floor, ceil, round, abs, sign\\
+conj,re,im,arg,conj,real,complex\\
+beta,betai,gamma,complexgamma,ellrf,ellf,ellrd,elle\\
+bitand, bitor, bitxor, bitnot
+
+Beberapa perintah memiliki alias, misalnya ln untuk log.
+
+\textgreater ln(E\^{}2), arctan(tan(0.5))
+
+\begin{verbatim}
+2
+0.5
+\end{verbatim}
+
+\textgreater sin(30°)
+
+\begin{verbatim}
+0.5
+\end{verbatim}
+
+Pastikan untuk menggunakan tanda kurung (tanda kurung bulat), apabila ada keraguan tentang urutan eksekusi! Berikut ini tidak sama dengan (2\textsuperscript{3)}4, yang merupakan default untuk 2\textsuperscript{3}4 di EMT (beberapa sistem numerik melakukannya dengan cara lain).
+
+\textgreater2\textsuperscript{3}4, (2\textsuperscript{3)}4, 2\textsuperscript{(3}4)
+
+\begin{verbatim}
+2.41785163923e+24
+4096
+2.41785163923e+24
+\end{verbatim}
+
+\section{Bilangan Real}\label{bilangan-real}
+
+Tipe data utama dalam Euler adalah bilangan real. Bilangan real direpresentasikan dalam format IEEE dengan akurasi sekitar 16 digit desimal.
+
+\textgreater longest 1/3
+
+\begin{verbatim}
+     0.3333333333333333 
+\end{verbatim}
+
+Representasi ganda internal membutuhkan 8 byte.
+
+\textgreater printdual(1/3)
+
+\begin{verbatim}
+1.0101010101010101010101010101010101010101010101010101*2^-2
+\end{verbatim}
+
+\textgreater printhex(1/3)
+
+\begin{verbatim}
+5.5555555555554*16^-1
+\end{verbatim}
+
+\section{String}\label{string}
+
+String dalam Euler didefinisikan dengan ``\ldots{}''.
+
+\textgreater{}``A string can contain anything.''
+
+\begin{verbatim}
+A string can contain anything.
+\end{verbatim}
+
+String dapat digabungkan dengan \textbar{} atau dengan +. Ini juga berfungsi dengan angka, yang dikonversi menjadi string dalam kasus tersebut.
+
+\textgreater{}``The area of the circle with radius'' + 2 + '' cm is '' + pi*4 + '' cm\^{}2.''
+
+\begin{verbatim}
+The area of the circle with radius 2 cm is 12.5663706144 cm^2.
+\end{verbatim}
+
+Fungsi cetak juga mengonversi angka ke string. Fungsi ini dapat mengambil sejumlah digit dan sejumlah tempat (0 untuk output padat), dan secara optimal satu unit.
+
+\textgreater{}``Golden Ratio :'' + print((1+sqrt(5))/2,5,0)
+
+\begin{verbatim}
+Golden Ratio : 1.61803
+\end{verbatim}
+
+Ada string khusus tidak ada, yang tidak mencetak. Dikembalikan oleh beberapa fungsi, ketika hasilnya tidak penting. (Dikembalikan secara otomatis, jika fungsi tidak memiliki pernyataan pengembalian).
+
+\textgreater none
+
+Untuk mengonversi string menjadi angka, cukup evaluasi string tersebut. Ini juga berlaku untuk ekspresi (lihat di bawah).
+
+\textgreater{}``1234.5''()
+
+\begin{verbatim}
+1234.5
+\end{verbatim}
+
+Untuk mendefinisikan vektor string, gunakan notasi vektor {[}\ldots{]}.
+
+\textgreater v:={[}``affe'',``charlie'',``bravo''{]}
+
+\begin{verbatim}
+affe
+charlie
+bravo
+\end{verbatim}
+
+Vektor string kosong dilambangkan dengan {[}none{]}. Vektor string dapat digabungkan.
+
+\textgreater w:={[}none{]}; w\textbar v\textbar v
+
+\begin{verbatim}
+affe
+charlie
+bravo
+affe
+charlie
+bravo
+\end{verbatim}
+
+String dapat berisi karakter Unicode. Secara internal, string ini berisi kode UTF-8. Untuk membuat string seperti itu, gunakan u``\ldots'' dan salah satu entitas HTML.
+
+String Unicode dapat digabungkan seperti string lainnya.
+
+\textgreater u''α = '' + 45 + u''°'' // pdfLaTeX mungkin gagal menampilkan secara benar
+
+\begin{verbatim}
+α = 45°
+\end{verbatim}
+
+Dalam komentar, entitas yang sama seperti α, β dll. dapat digunakan. Ini bisa menjadi alternatif yang cepat untuk Latex. (Detail lebih lanjut tentang komentar di bawah).
+
+Ada beberapa fungsi untuk membuat atau menganalisis string unicode. Fungsi strtochar() akan mengenali string Unicode, dan menerjemahkannya dengan benar.
+
+\textgreater v=strtochar(u''Ä is a German letter'')
+
+\begin{verbatim}
+[196,  32,  105,  115,  32,  97,  32,  71,  101,  114,  109,  97,  110,
+32,  108,  101,  116,  116,  101,  114]
+\end{verbatim}
+
+Hasilnya adalah sebuah vektor angka Unicode. Fungsi kebalikannya adalah chartoutf().
+
+\textgreater v{[}1{]}=strtochar(u''Ü``){[}1{]}; chartoutf(v)
+
+\begin{verbatim}
+Ü is a German letter
+\end{verbatim}
+
+Fungsi utf() dapat menerjemahkan sebuah string dengan entitas dalam sebuah variabel menjadi sebuah string Unicode.
+
+\textgreater s=``We have α=β.''; utf(s) // pdfLaTeX mungkin gagal menampilkan secara benar
+
+\begin{verbatim}
+We have α=β.
+\end{verbatim}
+
+Dimungkinkan juga untuk menggunakan entitas numerik.
+
+\textgreater u''Ähnliches''
+
+\begin{verbatim}
+Ähnliches
+\end{verbatim}
+
+\section{Nilai Boolean}\label{nilai-boolean}
+
+Nilai Boolean direpresentasikan dengan 1 = benar atau 0 = salah dalam Euler. String dapat dibandingkan, seperti halnya angka.
+
+\textgreater2\textless1, ``apel''\textless{}``banana''
+
+\begin{verbatim}
+0
+1
+\end{verbatim}
+
+``and'' adalah operator `\&\&' dan `or' adalah operator `\textbar\textbar{}', seperti dalam bahasa C. (Kata ``dan'' dan ``atau'' hanya dapat digunakan dalam kondisi ``jika'').
+
+\textgreater2\textless E \&\& E\textless3
+
+\begin{verbatim}
+1
+\end{verbatim}
+
+Operator Boolean mematuhi aturan bahasa matriks.
+
+\textgreater(1:10)\textgreater5, nonzeros(\%)
+
+\begin{verbatim}
+[0,  0,  0,  0,  0,  1,  1,  1,  1,  1]
+[6,  7,  8,  9,  10]
+\end{verbatim}
+
+Anda dapat menggunakan fungsi nonzeros() untuk mengekstrak elemen tertentu dari sebuah vektor. Pada contoh, kita menggunakan kondisional isprime(n).
+
+\textgreater N=2\textbar3:2:99 // N berisi elemen 2 dan bilangan2 ganjil dari 3 s.d. 99
+
+\begin{verbatim}
+[2,  3,  5,  7,  9,  11,  13,  15,  17,  19,  21,  23,  25,  27,  29,
+31,  33,  35,  37,  39,  41,  43,  45,  47,  49,  51,  53,  55,  57,
+59,  61,  63,  65,  67,  69,  71,  73,  75,  77,  79,  81,  83,  85,
+87,  89,  91,  93,  95,  97,  99]
+\end{verbatim}
+
+\textgreater N{[}nonzeros(isprime(N)){]} //pilih anggota2 N yang prima
+
+\begin{verbatim}
+[2,  3,  5,  7,  11,  13,  17,  19,  23,  29,  31,  37,  41,  43,  47,
+53,  59,  61,  67,  71,  73,  79,  83,  89,  97]
+\end{verbatim}
+
+\section{Format Keluaran}\label{format-keluaran}
+
+Format output default EMT mencetak 12 digit. Untuk memastikan bahwa kita melihat format default, kita atur ulang formatnya.
+
+\textgreater defformat; pi
+
+\begin{verbatim}
+3.14159265359
+\end{verbatim}
+
+Secara internal, EMT menggunakan standar IEEE untuk angka ganda dengan sekitar 16 digit desimal. Untuk melihat jumlah digit penuh, gunakan perintah ``longestformat'', atau kami menggunakan operator ``longest'' untuk menampilkan hasil dalam format terpanjang.
+
+\textgreater longest pi
+
+\begin{verbatim}
+      3.141592653589793 
+\end{verbatim}
+
+Berikut ini adalah representasi heksadesimal internal dari angka ganda.
+
+\textgreater printhex(pi)
+
+\begin{verbatim}
+3.243F6A8885A30*16^0
+\end{verbatim}
+
+Format output dapat diubah secara permanen dengan perintah format.
+
+\textgreater format(12,5); 1/3, pi, sin(1)
+
+\begin{verbatim}
+    0.33333 
+    3.14159 
+    0.84147 
+\end{verbatim}
+
+Standarnya adalah format(12).
+
+\textgreater format(12); 1/3
+
+\begin{verbatim}
+0.333333333333
+\end{verbatim}
+
+Fungsi seperti ``shortestformat'', ``shortformat'', ``longformat'' bekerja untuk vektor dengan cara berikut.
+
+\textgreater shortestformat; random(3,8)
+
+\begin{verbatim}
+  0.66    0.2   0.89   0.28   0.53   0.31   0.44    0.3 
+  0.28   0.88   0.27    0.7   0.22   0.45   0.31   0.91 
+  0.19   0.46  0.095    0.6   0.43   0.73   0.47   0.32 
+\end{verbatim}
+
+Format default untuk skalar adalah format(12). Tetapi ini dapat diubah.
+
+\textgreater setscalarformat(5); pi
+
+\begin{verbatim}
+3.1416
+\end{verbatim}
+
+Fungsi ``longestformat'' juga menetapkan format skalar.
+
+\textgreater longestformat; pi
+
+\begin{verbatim}
+3.141592653589793
+\end{verbatim}
+
+Sebagai referensi, berikut ini adalah daftar format output yang paling penting.
+
+format terpendek format terpendek format panjang, format terpanjang\\
+format (panjang, digit) format bagus (panjang)\\
+format pecahan (panjang)\\
+defformat
+
+Akurasi internal EMT adalah sekitar 16 tempat desimal, yang merupakan standar IEEE. Angka disimpan dalam format internal ini.
+
+Tetapi format keluaran EMT dapat diatur dengan cara yang fleksibel.
+
+\textgreater longestformat; pi,
+
+\begin{verbatim}
+3.141592653589793
+\end{verbatim}
+
+\textgreater format(10,5); pi
+
+\begin{verbatim}
+  3.14159 
+\end{verbatim}
+
+Standarnya adalah defformat().
+
+\textgreater defformat; // default
+
+Ada operator pendek yang hanya mencetak satu nilai. Operator ``terpanjang'' akan mencetak semua digit angka yang valid.
+
+\textgreater longest pi\^{}2/2
+
+\begin{verbatim}
+      4.934802200544679 
+\end{verbatim}
+
+Ada juga operator singkat untuk mencetak hasil dalam format pecahan. Kami sudah menggunakannya di atas.
+
+\textgreater fraction 1+1/2+1/3+1/4
+
+\begin{verbatim}
+25/12
+\end{verbatim}
+
+Karena format internal menggunakan cara biner untuk menyimpan angka, maka nilai 0,1 tidak akan direpresentasikan dengan tepat. Kesalahan bertambah sedikit, seperti yang Anda lihat dalam perhitungan berikut ini.
+
+\textgreater longest 0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1-1
+
+\begin{verbatim}
+ -1.110223024625157e-16 
+\end{verbatim}
+
+Tetapi, dengan ``longformat'' default, Anda tidak akan melihat hal ini. Untuk kenyamanan, output angka yang sangat kecil adalah 0.
+
+\textgreater0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1+0.1-1
+
+\begin{verbatim}
+0
+\end{verbatim}
+
+\chapter{Ekspresi}\label{ekspresi}
+
+String atau nama dapat digunakan untuk menyimpan ekspresi matematika, yang dapat dievaluasi oleh EMT. Untuk ini, gunakan tanda kurung setelah ekspresi. Jika Anda bermaksud menggunakan string sebagai ekspresi, gunakan konvensi untuk menamainya ``fx'' atau ``fxy'', dll. Ekspresi lebih diutamakan daripada fungsi.
+
+Variabel global dapat digunakan dalam evaluasi.
+
+\textgreater r:=2; fx:=``pi*r\^{}2''; longest fx()
+
+\begin{verbatim}
+      12.56637061435917 
+\end{verbatim}
+
+Parameter ditetapkan ke x, y, dan z dalam urutan tersebut. Parameter tambahan dapat ditambahkan dengan menggunakan parameter yang ditetapkan.
+
+\textgreater fx:=``a*sin(x)\^{}2''; fx(5,a=-1)
+
+\begin{verbatim}
+-0.919535764538
+\end{verbatim}
+
+Perhatikan bahwa ekspresi akan selalu menggunakan variabel global, meskipun ada variabel dalam fungsi dengan nama yang sama. (Jika tidak, evaluasi ekspresi dalam fungsi dapat memberikan hasil yang sangat membingungkan bagi pengguna yang memanggil fungsi tersebut).
+
+\textgreater at:=4; function f(expr,x,at) := expr(x); \ldots{}\\
+\textgreater{} f(``at*x\^{}2'',3,5) // computes 4*3\^{}2 not 5*3\^{}2
+
+\begin{verbatim}
+36
+\end{verbatim}
+
+Jika Anda ingin menggunakan nilai lain untuk ``at'' selain nilai global, Anda perlu menambahkan ``at=value''.
+
+\textgreater at:=4; function f(expr,x,a) := expr(x,at=a); \ldots{}\\
+\textgreater{} f(``at*x\^{}2'',3,5)
+
+\begin{verbatim}
+45
+\end{verbatim}
+
+Sebagai referensi, kami menyatakan bahwa koleksi panggilan (dibahas di tempat lain) dapat berisi ekspresi. Jadi kita dapat membuat contoh di atas sebagai berikut.
+
+\textgreater at:=4; function f(expr,x) := expr(x); \ldots{}\\
+\textgreater{} f(\{\{``at*x\^{}2'',at=5\}\},3)
+
+\begin{verbatim}
+45
+\end{verbatim}
+
+Ekspresi dalam x sering digunakan seperti halnya fungsi.
+
+Perhatikan bahwa mendefinisikan fungsi dengan nama yang sama seperti ekspresi simbolik global akan menghapus variabel ini untuk menghindari kebingungan antara ekspresi simbolik dan fungsi.
+
+\textgreater f \&= 5*x;
+
+\textgreater function f(x) := 6*x;
+
+\textgreater f(2)
+
+\begin{verbatim}
+12
+\end{verbatim}
+
+Sesuai dengan konvensi, ekspresi simbolik atau numerik harus diberi nama fx, fxy, dll. Skema penamaan ini tidak boleh digunakan untuk fungsi.
+
+\textgreater fx \&= diff(x\^{}x,x); \$\&fx
+
+\[x^{x}\,\left(\log x+1\right)\]Bentuk khusus dari sebuah ekspresi memungkinkan variabel apa pun sebagai parameter tanpa nama untuk evaluasi ekspresi, bukan hanya ``x'', ``y'', dll. Untuk ini, mulailah ekspresi dengan ``@(variabel)\ldots{}''.
+
+\textgreater{}``@(a,b) a\textsuperscript{2+b}2'', \%(4,5)
+
+\begin{verbatim}
+@(a,b) a^2+b^2
+41
+\end{verbatim}
+
+Hal ini memungkinkan untuk memanipulasi ekspresi dalam variabel lain untuk fungsi EMT yang membutuhkan ekspresi dalam ``x''.
+
+Cara paling dasar untuk mendefinisikan fungsi sederhana adalah dengan menyimpan rumusnya dalam ekspresi simbolik atau numerik. Jika variabel utamanya adalah x, ekspresi tersebut dapat dievaluasi seperti halnya sebuah fungsi.
+
+Seperti yang Anda lihat pada contoh berikut, variabel global terlihat selama evaluasi.
+
+\textgreater fx \&= x\^{}3-a*x; \ldots{}\\
+\textgreater{} a=1.2; fx(0.5)
+
+\begin{verbatim}
+-0.475
+\end{verbatim}
+
+Semua variabel lain dalam ekspresi dapat ditentukan dalam evaluasi menggunakan parameter yang ditetapkan.
+
+\textgreater fx(0.5,a=1.1)
+
+\begin{verbatim}
+-0.425
+\end{verbatim}
+
+Sebuah ekspresi tidak perlu berbentuk simbolik. Hal ini diperlukan, jika ekspresi mengandung fungsi-fungsi, yang hanya dikenal di kernel numerik, bukan di Maxima.
+
+\chapter{Matematika Simbolik}\label{matematika-simbolik}
+
+EMT melakukan matematika simbolik dengan bantuan Maxima. Untuk detailnya, mulailah dengan tutorial berikut ini, atau telusuri referensi untuk Maxima. Para ahli dalam Maxima harus memperhatikan bahwa ada perbedaan dalam sintaks antara sintaks asli Maxima dan sintaks default dari ekspresi simbolik dalam EMT.
+
+Matematika simbolik diintegrasikan secara mulus ke dalam Euler dengan \&. Ekspresi apapun yang dimulai dengan \& adalah sebuah ekspresi simbolik. Ekspresi ini dievaluasi dan dicetak oleh Maxima.
+
+Pertama-tama, Maxima memiliki aritmatika ``tak terbatas'' yang dapat menangani angka yang sangat besar.
+
+\textgreater\$\&44!
+
+\[2658271574788448768043625811014615890319638528000000000\]Dengan cara ini, Anda dapat menghitung hasil yang besar secara tepat. Mari kita hitung
+
+lateks: C(44,10) = \frac{44!}{34! \cdot 10!}
+
+\textgreater\$\& 44!/(34!*10!) // nilai C(44,10)
+
+\[2481256778\]Tentu saja, Maxima memiliki fungsi yang lebih efisien untuk hal ini (seperti halnya bagian numerik EMT).
+
+\textgreater\$binomial(44,10) //menghitung C(44,10) menggunakan fungsi binomial()
+
+\[2481256778\]Untuk mempelajari lebih lanjut tentang fungsi tertentu, klik dua kali pada fungsi tersebut. Sebagai contoh, coba klik dua kali pada ``\&binomial'' di baris perintah sebelumnya. Ini akan membuka dokumentasi Maxima yang disediakan oleh pembuat program tersebut.
+
+Anda akan mengetahui bahwa perintah-perintah berikut ini juga dapat digunakan.
+
+lateks: C(x,3)=\frac{x!}{(x-3)!3!}=\frac{(x-2)(x-1)x}{6}
+
+\textgreater\$binomial(x,3) // C(x,3)
+
+\[\frac{\left(x-2\right)\,\left(x-1\right)\,x}{6}\]Jika Anda ingin mengganti x dengan nilai tertentu, gunakan ``with''.
+
+\textgreater\$\&binomial(x,3) with x=10 // substitusi x=10 ke C(x,3)
+
+\[120\]Dengan begitu, Anda dapat menggunakan solusi dari sebuah persamaan dalam persamaan lain.
+
+Ekspresi simbolik dicetak oleh Maxima dalam bentuk 2D. Alasannya adalah sebuah bendera simbolik khusus dalam string.
+
+Seperti yang telah Anda lihat pada contoh sebelumnya dan contoh berikut, jika Anda telah menginstal LaTeX, Anda dapat mencetak ekspresi simbolik dengan Latex. Jika tidak, perintah berikut ini akan mengeluarkan pesan kesalahan.
+
+Untuk mencetak ekspresi simbolik dengan LaTeX, gunakan \$ di depan \& (atau Anda dapat menghilangkan \&) sebelum perintah. Jangan jalankan perintah Maxima dengan \$, jika Anda tidak memiliki LaTeX.
+
+\textgreater\$(3+x)/(x\^{}2+1)
+
+\[\frac{x+3}{x^2+1}\]Ekspresi simbolik diuraikan oleh Euler. Jika Anda membutuhkan sintaks yang kompleks dalam satu ekspresi, Anda dapat mengapit ekspresi dalam ``\ldots{}''. Menggunakan lebih dari satu ekspresi sederhana dimungkinkan, tetapi sangat tidak disarankan.
+
+\textgreater\&``v := 5; v\^{}2''
+
+\begin{verbatim}
+                                  25
+\end{verbatim}
+
+Untuk kelengkapan, kami menyatakan bahwa ekspresi simbolik dapat digunakan dalam program, tetapi harus diapit dengan tanda kutip. Selain itu, akan jauh lebih efektif untuk memanggil Maxima pada saat kompilasi jika memungkinkan.
+
+\textgreater\$\&expand((1+x)\^{}4), \$\&factor(diff(\%,x)) // diff: turunan, factor: faktor
+
+\[x^4+4\,x^3+6\,x^2+4\,x+1\]\[4\,\left(x+1\right)^3\]Sekali lagi, \% mengacu pada hasil sebelumnya.
+
+Untuk mempermudah, kita menyimpan solusi ke dalam sebuah variabel simbolik. Variabel simbolik didefinisikan dengan ``\&=''.
+
+\textgreater fx \&= (x+1)/(x\^{}4+1); \$\&fx
+
+\[\frac{x+1}{x^4+1}\]Ekspresi simbolik dapat digunakan dalam ekspresi simbolik lainnya.
+
+\textgreater\$\&factor(diff(fx,x))
+
+\[\frac{-3\,x^4-4\,x^3+1}{\left(x^4+1\right)^2}\]Masukan langsung dari perintah Maxima juga tersedia. Mulai baris perintah dengan ``::''. Sintaks Maxima disesuaikan dengan sintaks EMT (disebut ``mode kompatibilitas'').
+
+\textgreater\&factor(20!)
+
+\begin{verbatim}
+                         2432902008176640000
+\end{verbatim}
+
+\textgreater::: factor(10!)
+
+\begin{verbatim}
+                               8  4  2
+                              2  3  5  7
+\end{verbatim}
+
+\textgreater:: factor(20!)
+
+\begin{verbatim}
+                        18  8  4  2
+                       2   3  5  7  11 13 17 19
+\end{verbatim}
+
+Jika Anda adalah seorang ahli dalam Maxima, Anda mungkin ingin menggunakan sintaks asli Maxima. Anda dapat melakukan ini dengan ``:::''.
+
+\textgreater::: av:g\$ av\^{}2;
+
+\begin{verbatim}
+                                   2
+                                  g
+\end{verbatim}
+
+\textgreater fx \&= x\^{}3*exp(x), \$fx
+
+\begin{verbatim}
+                                 3  x
+                                x  E
+\end{verbatim}
+
+\[x^3\,e^{x}\]Variabel tersebut dapat digunakan dalam ekspresi simbolik lainnya. Perhatikan, bahwa pada perintah berikut ini, sisi kanan dari \&= dievaluasi sebelum penugasan ke Fx.
+
+\textgreater\&(fx with x=5), \$\%, \&float(\%)
+
+\begin{verbatim}
+                                     5
+                                125 E
+\end{verbatim}
+
+\[125\,e^5\]\\
+18551.64488782208
+
+\textgreater fx(5)
+
+\begin{verbatim}
+18551.6448878
+\end{verbatim}
+
+Untuk mengevaluasi ekspresi dengan nilai variabel tertentu, Anda dapat menggunakan operator ``with''.
+
+Baris perintah berikut ini juga mendemonstrasikan bahwa Maxima dapat mengevaluasi sebuah ekspresi secara numerik dengan float().
+
+\textgreater\&(fx with x=10)-(fx with x=5), \&float(\%)
+
+\begin{verbatim}
+                                10        5
+                          1000 E   - 125 E
+
+
+                         2.20079141499189e+7
+\end{verbatim}
+
+\textgreater\$factor(diff(fx,x,2))
+
+\[x\,\left(x^2+6\,x+6\right)\,e^{x}\]Untuk mendapatkan kode Latex untuk sebuah ekspresi, Anda dapat menggunakan perintah tex.
+
+\textgreater tex(fx)
+
+\begin{verbatim}
+x^3\,e^{x}
+\end{verbatim}
+
+Ekspresi simbolik dapat dievaluasi seperti halnya ekspresi numerik.
+
+\textgreater fx(0.5)
+
+\begin{verbatim}
+0.206090158838
+\end{verbatim}
+
+Dalam ekspresi simbolik, hal ini tidak dapat dilakukan, karena Maxima tidak mendukungnya. Sebagai gantinya, gunakan sintaks ``with'' (bentuk yang lebih baik dari perintah at(\ldots) pada Maxima).
+
+\textgreater\$\&fx with x=1/2
+
+\[\frac{\sqrt{e}}{8}\]Penugasan ini juga bisa bersifat simbolis.
+
+\textgreater\$\&fx with x=1+t
+
+\[\left(t+1\right)^3\,e^{t+1}\]Perintah solve menyelesaikan ekspresi simbolik untuk sebuah variabel di Maxima. Hasilnya adalah sebuah vektor solusi.
+
+\textgreater\$\&solve(x\^{}2+x=4,x)
+
+\[\left[ x=\frac{-\sqrt{17}-1}{2} , x=\frac{\sqrt{17}-1}{2} \right] \]Bandingkan dengan perintah ``solve'' numerik di Euler, yang membutuhkan nilai awal, dan secara opsional nilai target.
+
+\textgreater solve(``x\^{}2+x'',1,y=4)
+
+\begin{verbatim}
+1.56155281281
+\end{verbatim}
+
+Nilai numerik dari solusi simbolik dapat dihitung dengan evaluasi hasil simbolik. Euler akan membaca penugasan x= dst. Jika Anda tidak membutuhkan hasil numerik untuk perhitungan lebih lanjut, Anda juga bisa membiarkan Maxima menemukan nilai numeriknya.
+
+\textgreater sol \&= solve(x\^{}2+2*x=4,x); \$\&sol, sol(), \$\&float(sol)
+
+\[\left[ x=-\sqrt{5}-1 , x=\sqrt{5}-1 \right] \] {[}-3.23607, 1.23607{]}
+
+\[\left[ x=-3.23606797749979 , x=1.23606797749979 \right] \]Untuk mendapatkan solusi simbolik yang spesifik, seseorang dapat menggunakan ``dengan'' dan indeks.
+
+\textgreater\$\&solve(x\^{}2+x=1,x), x2 \&= x with \%{[}2{]}; \$\&x2
+
+\[\left[ x=\frac{-\sqrt{5}-1}{2} , x=\frac{\sqrt{5}-1}{2} \right] \]\[\frac{\sqrt{5}-1}{2}\]Untuk menyelesaikan sistem persamaan, gunakan vektor persamaan. Hasilnya adalah vektor solusi.
+
+\textgreater sol \&= solve({[}x+y=3,x\textsuperscript{2+y}2=5{]},{[}x,y{]}); \$\&sol, \$\&x*y with sol{[}1{]}
+
+\[\left[ \left[ x=2 , y=1 \right]  , \left[ x=1 , y=2 \right] 
+  \right] \]\[2\]Ekspresi simbolik dapat memiliki bendera, yang menunjukkan perlakuan khusus di Maxima. Beberapa flag dapat digunakan sebagai perintah juga, namun ada juga yang tidak. Bendera ditambahkan dengan ``\textbar{}'' (bentuk yang lebih baik dari ``ev(\ldots,flags)'')
+
+\textgreater\$\& diff((x\^{}3-1)/(x+1),x) //turunan bentuk pecahan
+
+\[\frac{3\,x^2}{x+1}-\frac{x^3-1}{\left(x+1\right)^2}\]\textgreater\$\& diff((x\^{}3-1)/(x+1),x) \textbar{} ratsimp //menyederhanakan pecahan
+
+\[\frac{2\,x^3+3\,x^2+1}{x^2+2\,x+1}\]\textgreater\$\&factor(\%)
+
+\[\frac{2\,x^3+3\,x^2+1}{\left(x+1\right)^2}\]\# Fungsi
+
+Dalam EMT, fungsi adalah program yang ditentukan dengan perintah ``function''. Fungsi dapat berupa fungsi satu baris atau fungsi multibaris.
+
+Fungsi satu baris dapat berupa numerik atau simbolik. Fungsi satu baris numerik didefinisikan dengan ``:=''.
+
+\textgreater function f(x) := x*sqrt(x\^{}2+1)
+
+Sebagai gambaran umum, kami menunjukkan semua definisi yang mungkin untuk fungsi satu baris. Sebuah fungsi dapat dievaluasi seperti halnya fungsi Euler bawaan.
+
+\textgreater f(2)
+
+\begin{verbatim}
+4.472135955
+\end{verbatim}
+
+Fungsi ini juga dapat digunakan untuk vektor, mengikuti bahasa matriks Euler, karena ekspresi yang digunakan dalam fungsi ini adalah vektor.
+
+\textgreater f(0:0.1:1)
+
+\begin{verbatim}
+[0,  0.100499,  0.203961,  0.313209,  0.430813,  0.559017,  0.699714,
+0.854459,  1.0245,  1.21083,  1.41421]
+\end{verbatim}
+
+Fungsi dapat diplot. Alih-alih ekspresi, kita hanya perlu memberikan nama fungsi.
+
+Berbeda dengan ekspresi simbolik atau numerik, nama fungsi harus disediakan dalam bentuk string.
+
+\textgreater solve(``f'',1,y=1)
+
+\begin{verbatim}
+0.786151377757
+\end{verbatim}
+
+Secara default, jika Anda perlu menimpa fungsi built-in, Anda harus menambahkan kata kunci ``overwrite''. Menimpa fungsi bawaan berbahaya dan dapat menyebabkan masalah bagi fungsi lain yang bergantung pada fungsi tersebut.
+
+Anda masih dapat memanggil fungsi bawaan sebagai ``\_\ldots'', jika fungsi tersebut merupakan fungsi dalam inti Euler.
+
+\textgreater function overwrite sin (x) := \_sin(x°) // redine sine in degrees
+
+\textgreater sin(45)
+
+\begin{verbatim}
+0.707106781187
+\end{verbatim}
+
+Sebaiknya kita hilangkan definisi ulang tentang dosa ini.
+
+\textgreater forget sin; sin(pi/4)
+
+\begin{verbatim}
+0.707106781187
+\end{verbatim}
+
+\section{Parameter Default}\label{parameter-default}
+
+Fungsi numerik dapat memiliki parameter default.
+
+\textgreater function f(x,a=1) := a*x\^{}2
+
+Menghilangkan parameter ini menggunakan nilai default.
+
+\textgreater f(4)
+
+\begin{verbatim}
+16
+\end{verbatim}
+
+Menetapkannya akan menimpa nilai default.
+
+\textgreater f(4,5)
+
+\begin{verbatim}
+80
+\end{verbatim}
+
+Parameter yang ditetapkan juga menimpanya. Ini digunakan oleh banyak fungsi Euler seperti plot2d, plot3d.
+
+\textgreater f(4,a=1)
+
+\begin{verbatim}
+16
+\end{verbatim}
+
+Jika sebuah variabel bukan parameter, maka variabel tersebut harus bersifat global. Fungsi satu baris dapat melihat variabel global.
+
+\textgreater function f(x) := a*x\^{}2
+
+\textgreater a=6; f(2)
+
+\begin{verbatim}
+24
+\end{verbatim}
+
+Tetapi parameter yang ditetapkan akan menggantikan nilai global.
+
+Jika argumen tidak ada dalam daftar parameter yang telah ditetapkan sebelumnya, argumen tersebut harus dideklarasikan dengan ``:=''!
+
+\textgreater f(2,a:=5)
+
+\begin{verbatim}
+20
+\end{verbatim}
+
+Fungsi simbolik didefinisikan dengan ``\&=''. Fungsi-fungsi ini didefinisikan dalam Euler dan Maxima, dan dapat digunakan di kedua bahasa tersebut. Ekspresi pendefinisian dijalankan melalui Maxima sebelum definisi.
+
+\textgreater function g(x) \&= x\^{}3-x*exp(-x); \$\&g(x)
+
+\[x^3-x\,e^ {- x }\]Fungsi simbolik dapat digunakan dalam ekspresi simbolik.
+
+\textgreater\$\&diff(g(x),x), \$\&\% with x=4/3
+
+\[x\,e^ {- x }-e^ {- x }+3\,x^2\]\[\frac{e^ {- \frac{4}{3} }}{3}+\frac{16}{3}\]Fungsi ini juga dapat digunakan dalam ekspresi numerik. Tentu saja, ini hanya akan berfungsi jika EMT dapat menginterpretasikan semua yang ada di dalam fungsi.
+
+\textgreater g(5+g(1))
+
+\begin{verbatim}
+178.635099908
+\end{verbatim}
+
+Mereka dapat digunakan untuk mendefinisikan fungsi atau ekspresi simbolis lainnya.
+
+\textgreater function G(x) \&= factor(integrate(g(x),x)); \$\&G(c) // integrate: mengintegralkan
+
+\[\frac{e^ {- c }\,\left(c^4\,e^{c}+4\,c+4\right)}{4}\]\textgreater solve(\&g(x),0.5)
+
+\begin{verbatim}
+0.703467422498
+\end{verbatim}
+
+Hal berikut ini juga dapat digunakan, karena Euler menggunakan ekspresi simbolik dalam fungsi g, jika tidak menemukan variabel simbolik g, dan jika ada fungsi simbolik g.
+
+\textgreater solve(\&g,0.5)
+
+\begin{verbatim}
+0.703467422498
+\end{verbatim}
+
+\textgreater function P(x,n) \&= (2*x-1)\^{}n; \$\&P(x,n)
+
+\[\left(2\,x-1\right)^{n}\]\textgreater function Q(x,n) \&= (x+2)\^{}n; \$\&Q(x,n)
+
+\[\left(x+2\right)^{n}\]\textgreater\$\&P(x,4), \$\&expand(\%)
+
+\[\left(2\,x-1\right)^4\]\[16\,x^4-32\,x^3+24\,x^2-8\,x+1\]\textgreater P(3,4)
+
+\begin{verbatim}
+625
+\end{verbatim}
+
+\textgreater\$\&P(x,4)+ Q(x,3), \$\&expand(\%)
+
+\[\left(2\,x-1\right)^4+\left(x+2\right)^3\]\[16\,x^4-31\,x^3+30\,x^2+4\,x+9\]\textgreater\$\&P(x,4)-Q(x,3), \$\&expand(\%), \$\&factor(\%)
+
+\[\left(2\,x-1\right)^4-\left(x+2\right)^3\]\[16\,x^4-33\,x^3+18\,x^2-20\,x-7\]\[16\,x^4-33\,x^3+18\,x^2-20\,x-7\]\textgreater\$\&P(x,4)*Q(x,3), \$\&expand(\%), \$\&factor(\%)
+
+\[\left(x+2\right)^3\,\left(2\,x-1\right)^4\]\[16\,x^7+64\,x^6+24\,x^5-120\,x^4-15\,x^3+102\,x^2-52\,x+8\]\[\left(x+2\right)^3\,\left(2\,x-1\right)^4\]\textgreater\$\&P(x,4)/Q(x,1), \$\&expand(\%), \$\&factor(\%)
+
+\[\frac{\left(2\,x-1\right)^4}{x+2}\]\[\frac{16\,x^4}{x+2}-\frac{32\,x^3}{x+2}+\frac{24\,x^2}{x+2}-\frac{8
+ \,x}{x+2}+\frac{1}{x+2}\]\[\frac{\left(2\,x-1\right)^4}{x+2}\]\textgreater function f(x) \&= x\^{}3-x; \$\&f(x)
+
+\[x^3-x\]Dengan \&=, fungsi ini bersifat simbolis, dan dapat digunakan dalam ekspresi simbolis lainnya.
+
+\textgreater\$\&integrate(f(x),x)
+
+\[\frac{x^4}{4}-\frac{x^2}{2}\]Dengan := fungsi tersebut berupa angka. Contoh yang baik adalah integral pasti seperti
+
+lateks: f(x) = \int\_1\^{}x t\^{}t , dt,
+
+yang tidak dapat dievaluasi secara simbolik.
+
+Jika kita mendefinisikan ulang fungsi tersebut dengan kata kunci ``map'', maka fungsi tersebut dapat digunakan untuk vektor x. Secara internal, fungsi tersebut dipanggil untuk semua nilai x satu kali, dan hasilnya disimpan dalam sebuah vektor.
+
+\textgreater function map f(x) := integrate(``x\^{}x'',1,x)
+
+\textgreater f(0:0.5:2)
+
+\begin{verbatim}
+[-0.783431,  -0.410816,  0,  0.676863,  2.05045]
+\end{verbatim}
+
+Fungsi dapat memiliki nilai default untuk parameter.
+
+\textgreater function mylog (x,base=10) := ln(x)/ln(base);
+
+Sekarang, fungsi ini dapat dipanggil dengan atau tanpa parameter ``base''.
+
+\textgreater mylog(100), mylog(2\^{}6.7,2)
+
+\begin{verbatim}
+2
+6.7
+\end{verbatim}
+
+Selain itu, dimungkinkan untuk menggunakan parameter yang ditetapkan.
+
+\textgreater mylog(E\^{}2,base=E)
+
+\begin{verbatim}
+2
+\end{verbatim}
+
+Sering kali, kita ingin menggunakan fungsi untuk vektor di satu tempat, dan untuk masing-masing elemen di tempat lain. Hal ini dimungkinkan dengan parameter vektor.
+
+\textgreater function f({[}a,b{]}) \&= a\textsuperscript{2+b}2-a*b+b; \$\&f(a,b), \$\&f(x,y)
+
+\[b^2-a\,b+b+a^2\]\[y^2-x\,y+y+x^2\]Fungsi simbolik seperti itu dapat digunakan untuk variabel simbolik.
+
+Tetapi fungsi ini juga dapat digunakan untuk vektor numerik.
+
+\textgreater v={[}3,4{]}; f(v)
+
+\begin{verbatim}
+17
+\end{verbatim}
+
+Ada juga fungsi yang murni simbolis, yang tidak dapat digunakan secara numerik.
+
+\textgreater function lapl(expr,x,y) \&\&= diff(expr,x,2)+diff(expr,y,2)//turunan parsial kedua
+
+\begin{verbatim}
+                 diff(expr, y, 2) + diff(expr, x, 2)
+\end{verbatim}
+
+\textgreater\$\&realpart((x+I*y)\^{}4), \$\&lapl(\%,x,y)
+
+\[y^4-6\,x^2\,y^2+x^4\]\[0\]Tetapi tentu saja, semua itu bisa digunakan dalam ekspresi simbolis atau dalam definisi fungsi simbolis.
+
+\textgreater function f(x,y) \&= factor(lapl((x+y\textsuperscript{2)}5,x,y)); \$\&f(x,y)
+
+\[10\,\left(y^2+x\right)^3\,\left(9\,y^2+x+2\right)\]Untuk meringkas
+
+\begin{itemize}
+\item
+  \&= mendefinisikan fungsi simbolik,
+\item
+  := mendefinisikan fungsi numerik,
+\item
+  \&\&= mendefinisikan fungsi simbolik murni.
+\end{itemize}
+
+\chapter{Memecahkan Ekspresi}\label{memecahkan-ekspresi}
+
+Ekspresi dapat diselesaikan secara numerik dan simbolik.
+
+Untuk menyelesaikan ekspresi sederhana dari satu variabel, kita dapat menggunakan fungsi solve(). Fungsi ini membutuhkan nilai awal untuk memulai pencarian. Secara internal, solve() menggunakan metode secant.
+
+\textgreater solve(``x\^{}2-2'',1)
+
+\begin{verbatim}
+1.41421356237
+\end{verbatim}
+
+Hal ini juga bisa digunakan untuk ekspresi simbolis. Perhatikan fungsi berikut ini.
+
+\textgreater\$\&solve(x\^{}2=2,x)
+
+\[\left[ x=-\sqrt{2} , x=\sqrt{2} \right] \]\textgreater\$\&solve(x\^{}2-2,x)
+
+\[\left[ x=-\sqrt{2} , x=\sqrt{2} \right] \]\textgreater\$\&solve(a*x\^{}2+b*x+c=0,x)
+
+\[\left[ x=\frac{-\sqrt{b^2-4\,a\,c}-b}{2\,a} , x=\frac{\sqrt{b^2-4\,
+ a\,c}-b}{2\,a} \right] \]\textgreater\$\&solve({[}a*x+b*y=c,d*x+e*y=f{]},{[}x,y{]})
+
+\[\left[ \left[ x=-\frac{c\,e}{b\,\left(d-5\right)-a\,e} , y=\frac{c
+ \,\left(d-5\right)}{b\,\left(d-5\right)-a\,e} \right]  \right] \]\textgreater px \&= 4*x\textsuperscript{8+x}7-x\^{}4-x; \$\&px
+
+\[4\,x^8+x^7-x^4-x\]Sekarang kita mencari titik, di mana polinomialnya adalah 2. Dalam solve(), nilai target default y=0 dapat diubah dengan variabel yang ditetapkan.
+
+Kami menggunakan y=2 dan mengeceknya dengan mengevaluasi polinomial pada hasil sebelumnya.
+
+\textgreater solve(px,1,y=2), px(\%)
+
+\begin{verbatim}
+0.966715594851
+2
+\end{verbatim}
+
+Memecahkan sebuah ekspresi simbolik dalam bentuk simbolik mengembalikan sebuah daftar solusi. Kami menggunakan pemecah simbolik solve() yang disediakan oleh Maxima.
+
+\textgreater sol \&= solve(x\^{}2-x-1,x); \$\&sol
+
+\[\left[ x=\frac{1-\sqrt{5}}{2} , x=\frac{\sqrt{5}+1}{2} \right] \]Cara termudah untuk mendapatkan nilai numerik adalah dengan mengevaluasi solusi secara numerik seperti sebuah ekspresi.
+
+\textgreater longest sol()
+
+\begin{verbatim}
+    -0.6180339887498949       1.618033988749895 
+\end{verbatim}
+
+Untuk menggunakan solusi secara simbolis dalam ekspresi lain, cara termudah adalah ``dengan''.
+
+\textgreater\$\&x\^{}2 with sol{[}1{]}, \$\&expand(x\^{}2-x-1 with sol{[}2{]})
+
+\[\frac{\left(\sqrt{5}-1\right)^2}{4}\]\[0\]Menyelesaikan sistem persamaan secara simbolik dapat dilakukan dengan vektor persamaan dan pemecah simbolik solve(). Jawabannya adalah sebuah daftar daftar persamaan.
+
+\textgreater\$\&solve({[}x+y=2,x\^{}3+2*y+x=4{]},{[}x,y{]})
+
+\[\left[ \left[ x=-1 , y=3 \right]  , \left[ x=1 , y=1 \right]  , 
+ \left[ x=0 , y=2 \right]  \right] \]Fungsi f() dapat melihat variabel global. Tetapi seringkali kita ingin menggunakan parameter lokal.
+
+lateks: a\textsuperscript{x-x}a = 0.1
+
+dengan a = 3.
+
+\textgreater function f(x,a) := x\textsuperscript{a-a}x;
+
+Salah satu cara untuk mengoper parameter tambahan ke f() adalah dengan menggunakan sebuah daftar yang berisi nama fungsi dan parameternya (cara lainnya adalah dengan menggunakan parameter titik koma).
+
+\textgreater solve(\{\{``f'',3\}\},2,y=0.1)
+
+\begin{verbatim}
+2.54116291558
+\end{verbatim}
+
+This does also work with expressions. But then, a named list element has to be used. (More on lists in the tutorial about the syntax of EMT).
+
+\textgreater solve(\{\{``x\textsuperscript{a-a}x'',a=3\}\},2,y=0.1)
+
+\begin{verbatim}
+2.54116291558
+\end{verbatim}
+
+\chapter{Menyelesaikan Pertidaksamaan}\label{menyelesaikan-pertidaksamaan}
+
+Untuk menyelesaikan pertidaksamaan, EMT tidak akan dapat melakukannya, melainkan dengan bantuan Maxima, artinya secara eksak (simbolik). Perintah Maxima yang digunakan adalah fourier\_elim(), yang harus dipanggil dengan perintah ``load(fourier\_elim)'' terlebih dahulu.
+
+\textgreater\&load(fourier\_elim)
+
+\begin{verbatim}
+        C:/Program Files/Euler x64/maxima/share/maxima/5.35.1/share/f\
+ourier_elim/fourier_elim.lisp
+\end{verbatim}
+
+\textgreater\$\&fourier\_elim({[}x\^{}2 - 1\textgreater0{]},{[}x{]}) // x\^{}2-1 \textgreater{} 0
+
+\[\left[ 1<x \right] \lor \left[ x<-1 \right] \]\textgreater\$\&fourier\_elim({[}x\^{}2 - 1\textless0{]},{[}x{]}) // x\^{}2-1 \textless{} 0
+
+\[\left[ -1<x , x<1 \right] \]\textgreater\$\&fourier\_elim({[}x\^{}2 - 1 \# 0{]},{[}x{]}) // x\^{}-1 \textless\textgreater{} 0
+
+\[\left[ -1<x , x<1 \right] \lor \left[ 1<x \right] \lor \left[ x<-1
+  \right] \]\textgreater\$\&fourier\_elim({[}x \# 6{]},{[}x{]})
+
+\[\left[ x<6 \right] \lor \left[ 6<x \right] \]\textgreater\$\&fourier\_elim({[}x \textless{} 1, x \textgreater{} 1{]},{[}x{]}) // tidak memiliki penyelesaian
+
+\[{\it emptyset}\]\textgreater\$\&fourier\_elim({[}minf \textless{} x, x \textless{} inf{]},{[}x{]}) // solusinya R
+
+\[{\it universalset}\]\textgreater\$\&fourier\_elim({[}x\^{}3 - 1 \textgreater{} 0{]},{[}x{]})
+
+\[\left[ 1<x , x^2+x+1>0 \right] \lor \left[ x<1 , -x^2-x-1>0
+  \right] \]\textgreater\$\&fourier\_elim({[}cos(x) \textless{} 1/2{]},{[}x{]}) // ??? gagal
+
+\[\left[ 1-2\,\cos x>0 \right] \]\textgreater\$\&fourier\_elim({[}y-x \textless{} 5, x - y \textless{} 7, 10 \textless{} y{]},{[}x,y{]}) // sistem pertidaksamaan
+
+\[\left[ y-5<x , x<y+7 , 10<y \right] \]\textgreater\$\&fourier\_elim({[}y-x \textless{} 5, x - y \textless{} 7, 10 \textless{} y{]},{[}y,x{]})
+
+\[\left[ {\it max}\left(10 , x-7\right)<y , y<x+5 , 5<x \right] \]\textgreater\$\&fourier\_elim((x + y \textless{} 5) and (x - y \textgreater8),{[}x,y{]})
+
+\[\left[ y+8<x , x<5-y , y<-\frac{3}{2} \right] \]\textgreater\$\&fourier\_elim(((x + y \textless{} 5) and x \textless{} 1) or (x - y \textgreater8),{[}x,y{]})
+
+\[\left[ y+8<x \right] \lor \left[ x<{\it min}\left(1 , 5-y\right)
+  \right] \]\textgreater\&fourier\_elim({[}max(x,y) \textgreater{} 6, x \# 8, abs(y-1) \textgreater{} 12{]},{[}x,y{]})
+
+\begin{verbatim}
+        [6 &lt; x, x &lt; 8, y &lt; - 11] or [8 &lt; x, y &lt; - 11]
+ or [x &lt; 8, 13 &lt; y] or [x = y, 13 &lt; y] or [8 &lt; x, x &lt; y, 13 &lt; y]
+ or [y &lt; x, 13 &lt; y]
+\end{verbatim}
+
+\textgreater\$\&fourier\_elim({[}(x+6)/(x-9) \textless= 6{]},{[}x{]})
+
+\[\left[ x=12 \right] \lor \left[ 12<x \right] \lor \left[ x<9
+  \right] \]\# Bahasa Matriks
+
+Dokumentasi inti EMT berisi diskusi terperinci tentang bahasa matriks Euler.
+
+Vektor dan matriks dimasukkan dengan tanda kurung siku, elemen dipisahkan dengan koma, baris dipisahkan dengan titik koma.
+
+\textgreater A={[}1,2;3,4{]}
+
+\begin{verbatim}
+            1             2 
+            3             4 
+\end{verbatim}
+
+Hasil kali matriks dilambangkan dengan sebuah titik.
+
+\textgreater b={[}3;4{]}
+
+\begin{verbatim}
+            3 
+            4 
+\end{verbatim}
+
+\textgreater b' // transpose b
+
+\begin{verbatim}
+[3,  4]
+\end{verbatim}
+
+\textgreater inv(A) //inverse A
+
+\begin{verbatim}
+           -2             1 
+          1.5          -0.5 
+\end{verbatim}
+
+Invers matriks adalah matriks baru yang merupaka kebalikan dari matriks asal
+
+perkalian matriks sendiri adalah proses mengalikan setiap elemen baris pada matroks pertama dengan elemen kolom pada matriks kedua
+
+\textgreater A.b //perkalian matriks
+
+\begin{verbatim}
+           11 
+           25 
+\end{verbatim}
+
+perkalian dari matriks dengan invers matriks itu sendiri akan menghasilkan matriks identitas.
+
+\textgreater A.inv(A)
+
+\begin{verbatim}
+            1             0 
+            0             1 
+\end{verbatim}
+
+Poin utama dari bahasa matriks adalah bahwa semua fungsi dan operator bekerja elemen demi elemen.
+
+\textgreater A.A
+
+\begin{verbatim}
+            7            10 
+           15            22 
+\end{verbatim}
+
+\textgreater A\^{}2 //perpangkatan elemen2 A
+
+\begin{verbatim}
+            1             4 
+            9            16 
+\end{verbatim}
+
+\textgreater A.A.A
+
+\begin{verbatim}
+           37            54 
+           81           118 
+\end{verbatim}
+
+\textgreater power(A,3) //perpangkatan matriks
+
+\begin{verbatim}
+           37            54 
+           81           118 
+\end{verbatim}
+
+\textgreater A/A //pembagian elemen-elemen matriks yang seletak
+
+\begin{verbatim}
+            1             1 
+            1             1 
+\end{verbatim}
+
+\textgreater A/b //pembagian elemen2 A oleh elemen2 b kolom demi kolom (karena b vektor kolom)
+
+\begin{verbatim}
+     0.333333      0.666667 
+         0.75             1 
+\end{verbatim}
+
+\textgreater A\textbackslash b // hasilkali invers A dan b, A\^{}(-1)b
+
+\begin{verbatim}
+           -2 
+          2.5 
+\end{verbatim}
+
+\textgreater inv(A).b
+
+\begin{verbatim}
+           -2 
+          2.5 
+\end{verbatim}
+
+\textgreater A\textbackslash A //A\^{}(-1)A
+
+\begin{verbatim}
+            1             0 
+            0             1 
+\end{verbatim}
+
+\textgreater inv(A).A
+
+\begin{verbatim}
+            1             0 
+            0             1 
+\end{verbatim}
+
+\textgreater A*A //perkalin elemen-elemen matriks seletak
+
+\begin{verbatim}
+            1             4 
+            9            16 
+\end{verbatim}
+
+Ini bukan hasil kali matriks, tetapi perkalian elemen demi elemen. Hal yang sama berlaku untuk vektor.
+
+\textgreater b\^{}2 // perpangkatan elemen-elemen matriks/vektor
+
+\begin{verbatim}
+            9 
+           16 
+\end{verbatim}
+
+Jika salah satu operan adalah vektor atau skalar, maka operan tersebut akan diperluas dengan cara alami.
+
+\textgreater2*A
+
+\begin{verbatim}
+            2             4 
+            6             8 
+\end{verbatim}
+
+Misalnya, jika operan adalah vektor kolom, elemen-elemennya diterapkan ke semua baris A.
+
+\textgreater{[}1,2{]}*A
+
+\begin{verbatim}
+            1             4 
+            3             8 
+\end{verbatim}
+
+Jika ini adalah vektor baris, vektor ini diterapkan ke semua kolom A.
+
+\textgreater A*{[}2,3{]}
+
+\begin{verbatim}
+            2             6 
+            6            12 
+\end{verbatim}
+
+Kita dapat membayangkan perkalian ini seolah-olah vektor baris v telah diduplikasi untuk membentuk matriks dengan ukuran yang sama dengan A.
+
+\textgreater dup({[}1,2{]},2) // dup: menduplikasi/menggandakan vektor {[}1,2{]} sebanyak 2 kali (baris)
+
+\begin{verbatim}
+            1             2 
+            1             2 
+\end{verbatim}
+
+\textgreater A*dup({[}1,2{]},2)
+
+\begin{verbatim}
+            1             4 
+            3             8 
+\end{verbatim}
+
+Hal ini juga berlaku untuk dua vektor di mana satu vektor adalah vektor baris dan yang lainnya adalah vektor kolom. Kami menghitung i*j untuk i, j dari 1 sampai 5. Caranya adalah dengan mengalikan 1:5 dengan transposenya. Bahasa matriks Euler secara otomatis menghasilkan sebuah tabel nilai.
+
+\textgreater(1:5)*(1:5)' // hasilkali elemen-elemen vektor baris dan vektor kolom
+
+\begin{verbatim}
+            1             2             3             4             5 
+            2             4             6             8            10 
+            3             6             9            12            15 
+            4             8            12            16            20 
+            5            10            15            20            25 
+\end{verbatim}
+
+Sekali lagi, ingatlah bahwa ini bukan produk matriks!
+
+\textgreater(1:5).(1:5)' // hasilkali vektor baris dan vektor kolom
+
+\begin{verbatim}
+55
+\end{verbatim}
+
+\textgreater sum((1:5)*(1:5)) // sama hasilnya
+
+\begin{verbatim}
+55
+\end{verbatim}
+
+Bahkan operator seperti \textless{} atau == bekerja dengan cara yang sama.
+
+\textgreater(1:10)\textless6 // menguji elemen-elemen yang kurang dari 6
+
+\begin{verbatim}
+[1,  1,  1,  1,  1,  0,  0,  0,  0,  0]
+\end{verbatim}
+
+Sebagai contoh, kita dapat menghitung jumlah elemen yang memenuhi kondisi tertentu dengan fungsi sum().
+
+\textgreater sum((1:10)\textless6) // banyak elemen yang kurang dari 6
+
+\begin{verbatim}
+5
+\end{verbatim}
+
+Euler memiliki operator perbandingan, seperti ``=='', yang memeriksa kesetaraan.
+
+Kita mendapatkan vektor 0 dan 1, di mana 1 berarti benar.
+
+\textgreater t=(1:10)\^{}2; t==25 //menguji elemen2 t yang sama dengan 25 (hanya ada 1)
+
+\begin{verbatim}
+[0,  0,  0,  0,  1,  0,  0,  0,  0,  0]
+\end{verbatim}
+
+Dari vektor seperti itu, ``nonzeros'' memilih elemen bukan nol.
+
+Dalam hal ini, kita mendapatkan indeks semua elemen yang lebih besar dari 50.
+
+\textgreater nonzeros(t\textgreater50) //indeks elemen2 t yang lebih besar daripada 50
+
+\begin{verbatim}
+[8,  9,  10]
+\end{verbatim}
+
+Tentu saja, kita dapat menggunakan vektor indeks ini untuk mendapatkan nilai yang sesuai dalam t.
+
+\textgreater t{[}nonzeros(t\textgreater50){]} //elemen2 t yang lebih besar daripada 50
+
+\begin{verbatim}
+[64,  81,  100]
+\end{verbatim}
+
+Sebagai contoh, mari kita cari semua kuadrat dari angka 1 sampai 1000, yaitu 5 modulo 11 dan 3 modulo 13.
+
+\textgreater t=1:1000; nonzeros(mod(t\^{}2,11)==5 \&\& mod(t\^{}2,13)==3)
+
+\begin{verbatim}
+[4,  48,  95,  139,  147,  191,  238,  282,  290,  334,  381,  425,
+433,  477,  524,  568,  576,  620,  667,  711,  719,  763,  810,  854,
+862,  906,  953,  997]
+\end{verbatim}
+
+EMT tidak sepenuhnya efektif untuk komputasi bilangan bulat. EMT menggunakan floating point presisi ganda secara internal. Akan tetapi, hal ini sering kali sangat berguna.
+
+Kita dapat memeriksa bilangan prima. Mari kita cari tahu, berapa banyak kuadrat ditambah 1 yang merupakan bilangan prima.
+
+\textgreater t=1:1000; length(nonzeros(isprime(t\^{}2+1)))
+
+\begin{verbatim}
+112
+\end{verbatim}
+
+Fungsi nonzeros() hanya bekerja untuk vektor. Untuk matriks, ada mnonzeros().
+
+\textgreater seed(2); A=random(3,4)
+
+\begin{verbatim}
+     0.765761      0.401188      0.406347      0.267829 
+      0.13673      0.390567      0.495975      0.952814 
+     0.548138      0.006085      0.444255      0.539246 
+\end{verbatim}
+
+Ini mengembalikan indeks elemen, yang bukan nol.
+
+\textgreater k=mnonzeros(A\textless0.4) //indeks elemen2 A yang kurang dari 0,4
+
+\begin{verbatim}
+            1             4 
+            2             1 
+            2             2 
+            3             2 
+\end{verbatim}
+
+Indeks ini dapat digunakan untuk menetapkan elemen ke suatu nilai.
+
+\textgreater mset(A,k,0) //mengganti elemen2 suatu matriks pada indeks tertentu
+
+\begin{verbatim}
+     0.765761      0.401188      0.406347             0 
+            0             0      0.495975      0.952814 
+     0.548138             0      0.444255      0.539246 
+\end{verbatim}
+
+Fungsi mset() juga dapat mengatur elemen-elemen pada indeks ke entri-entri matriks lain.
+
+\textgreater mset(A,k,-random(size(A)))
+
+\begin{verbatim}
+     0.765761      0.401188      0.406347     -0.126917 
+    -0.122404     -0.691673      0.495975      0.952814 
+     0.548138     -0.483902      0.444255      0.539246 
+\end{verbatim}
+
+Dan dimungkinkan untuk mendapatkan elemen-elemen dalam vektor.
+
+\textgreater mget(A,k)
+
+\begin{verbatim}
+[0.267829,  0.13673,  0.390567,  0.006085]
+\end{verbatim}
+
+Fungsi lain yang berguna adalah extrema, yang mengembalikan nilai minimal dan maksimal di setiap baris matriks dan posisinya.
+
+\textgreater ex=extrema(A)
+
+\begin{verbatim}
+     0.267829             4      0.765761             1 
+      0.13673             1      0.952814             4 
+     0.006085             2      0.548138             1 
+\end{verbatim}
+
+Kita bisa menggunakan ini untuk mengekstrak nilai maksimal dalam setiap baris.
+
+\textgreater ex{[},3{]}'
+
+\begin{verbatim}
+[0.765761,  0.952814,  0.548138]
+\end{verbatim}
+
+Ini, tentu saja, sama dengan fungsi max().
+
+\textgreater max(A)'
+
+\begin{verbatim}
+[0.765761,  0.952814,  0.548138]
+\end{verbatim}
+
+Tetapi dengan mget(), kita dapat mengekstrak indeks dan menggunakan informasi ini untuk mengekstrak elemen-elemen pada posisi yang sama dari matriks yang lain.
+
+\textgreater j=(1:rows(A))'\textbar ex{[},4{]}, mget(-A,j)
+
+\begin{verbatim}
+            1             1 
+            2             4 
+            3             1 
+[-0.765761,  -0.952814,  -0.548138]
+\end{verbatim}
+
+\chapter{Fungsi Matriks Lainnya (Membangun Matriks)}\label{fungsi-matriks-lainnya-membangun-matriks}
+
+Untuk membangun sebuah matriks, kita dapat menumpuk satu matriks di atas matriks lainnya. Jika keduanya tidak memiliki jumlah kolom yang sama, kolom yang lebih pendek akan diisi dengan 0.
+
+\textgreater v=1:3; v\_v
+
+\begin{verbatim}
+            1             2             3 
+            1             2             3 
+\end{verbatim}
+
+Demikian juga, kita dapat melampirkan matriks ke matriks lain secara berdampingan, jika keduanya memiliki jumlah baris yang sama.
+
+\textgreater A=random(3,4); A\textbar v'
+
+\begin{verbatim}
+     0.032444     0.0534171      0.595713      0.564454             1 
+      0.83916      0.175552      0.396988       0.83514             2 
+    0.0257573      0.658585      0.629832      0.770895             3 
+\end{verbatim}
+
+Jika keduanya tidak memiliki jumlah baris yang sama, matriks yang lebih pendek diisi dengan 0.
+
+Ada pengecualian untuk aturan ini. Bilangan real yang dilampirkan pada sebuah matriks akan digunakan sebagai kolom yang diisi dengan bilangan real tersebut.
+
+\textgreater A\textbar1
+
+\begin{verbatim}
+     0.032444     0.0534171      0.595713      0.564454             1 
+      0.83916      0.175552      0.396988       0.83514             1 
+    0.0257573      0.658585      0.629832      0.770895             1 
+\end{verbatim}
+
+Dimungkinkan untuk membuat matriks vektor baris dan kolom.
+
+\textgreater{[}v;v{]}
+
+\begin{verbatim}
+            1             2             3 
+            1             2             3 
+\end{verbatim}
+
+\textgreater{[}v',v'{]}
+
+\begin{verbatim}
+            1             1 
+            2             2 
+            3             3 
+\end{verbatim}
+
+Tujuan utama dari hal ini adalah untuk menginterpretasikan vektor ekspresi untuk vektor kolom.
+
+\textgreater{}``{[}x,x\^{}2{]}''(v')
+
+\begin{verbatim}
+            1             1 
+            2             4 
+            3             9 
+\end{verbatim}
+
+Untuk mendapatkan ukuran A, kita dapat menggunakan fungsi berikut ini.
+
+\textgreater C=zeros(2,4); rows(C), cols(C), size(C), length(C)
+
+\begin{verbatim}
+2
+4
+[2,  4]
+4
+\end{verbatim}
+
+Untuk vektor, ada length().
+
+\textgreater length(2:10)
+
+\begin{verbatim}
+9
+\end{verbatim}
+
+Ada banyak fungsi lain yang menghasilkan matriks.
+
+\textgreater ones(2,2)
+
+\begin{verbatim}
+            1             1 
+            1             1 
+\end{verbatim}
+
+Ini juga dapat digunakan dengan satu parameter. Untuk mendapatkan vektor dengan angka selain 1, gunakan yang berikut ini.
+
+\textgreater ones(5)*6
+
+\begin{verbatim}
+[6,  6,  6,  6,  6]
+\end{verbatim}
+
+Matriks angka acak juga dapat dibuat dengan acak (distribusi seragam) atau normal (distribusi Gauß).
+
+\textgreater random(2,2)
+
+\begin{verbatim}
+      0.66566      0.831835 
+        0.977      0.544258 
+\end{verbatim}
+
+Berikut ini adalah fungsi lain yang berguna, yang merestrukturisasi elemen-elemen matriks menjadi matriks lain.
+
+\textgreater redim(1:9,3,3) // menyusun elemen2 1, 2, 3, \ldots, 9 ke bentuk matriks 3x3
+
+\begin{verbatim}
+            1             2             3 
+            4             5             6 
+            7             8             9 
+\end{verbatim}
+
+Dengan fungsi berikut, kita dapat menggunakan fungsi ini dan fungsi dup untuk menulis fungsi rep(), yang mengulang sebuah vektor sebanyak n kali.
+
+\textgreater function rep(v,n) := redim(dup(v,n),1,n*cols(v))
+
+Mari kita uji.
+
+\textgreater rep(1:3,5)
+
+\begin{verbatim}
+[1,  2,  3,  1,  2,  3,  1,  2,  3,  1,  2,  3,  1,  2,  3]
+\end{verbatim}
+
+Fungsi multdup() menduplikasi elemen-elemen sebuah vektor.
+
+\textgreater multdup(1:3,5), multdup(1:3,{[}2,3,2{]})
+
+\begin{verbatim}
+[1,  1,  1,  1,  1,  2,  2,  2,  2,  2,  3,  3,  3,  3,  3]
+[1,  1,  2,  2,  2,  3,  3]
+\end{verbatim}
+
+Fungsi flipx() dan flipy() membalik urutan baris atau kolom dari sebuah matriks. Misalnya, fungsi flipx() membalik secara horizontal.
+
+\textgreater flipx(1:5) //membalik elemen2 vektor baris
+
+\begin{verbatim}
+[5,  4,  3,  2,  1]
+\end{verbatim}
+
+Untuk rotasi, Euler memiliki rotleft() dan rotright().
+
+\textgreater rotleft(1:5) // memutar elemen2 vektor baris
+
+\begin{verbatim}
+[2,  3,  4,  5,  1]
+\end{verbatim}
+
+Fungsi khusus adalah drop(v,i), yang menghapus elemen dengan indeks di i dari vektor v.
+
+\textgreater drop(10:20,3)
+
+\begin{verbatim}
+[10,  11,  13,  14,  15,  16,  17,  18,  19,  20]
+\end{verbatim}
+
+Perhatikan bahwa vektor i dalam drop(v,i) merujuk pada indeks elemen dalam v, bukan nilai elemen. Jika Anda ingin menghapus elemen, Anda harus menemukan elemen-elemen tersebut terlebih dahulu. Fungsi indexof(v,x) dapat digunakan untuk menemukan elemen x dalam vektor terurut v.
+
+\textgreater v=primes(50), i=indexof(v,10:20), drop(v,i)
+
+\begin{verbatim}
+[2,  3,  5,  7,  11,  13,  17,  19,  23,  29,  31,  37,  41,  43,  47]
+[0,  5,  0,  6,  0,  0,  0,  7,  0,  8,  0]
+[2,  3,  5,  7,  23,  29,  31,  37,  41,  43,  47]
+\end{verbatim}
+
+Seperti yang Anda lihat, tidak ada salahnya menyertakan indeks di luar jangkauan (seperti 0), indeks ganda, atau indeks yang tidak diurutkan.
+
+\textgreater drop(1:10,shuffle({[}0,0,5,5,7,12,12{]}))
+
+\begin{verbatim}
+[1,  2,  3,  4,  6,  8,  9,  10]
+\end{verbatim}
+
+Ada beberapa fungsi khusus untuk mengatur diagonal atau menghasilkan matriks diagonal.
+
+Kita mulai dengan matriks identitas.
+
+\textgreater A=id(5) // matriks identitas 5x5
+
+\begin{verbatim}
+            1             0             0             0             0 
+            0             1             0             0             0 
+            0             0             1             0             0 
+            0             0             0             1             0 
+            0             0             0             0             1 
+\end{verbatim}
+
+Kemudian, kami menetapkan diagonal bawah (-1) ke 1:4.
+
+\textgreater setdiag(A,-1,1:4) //mengganti diagonal di bawah diagonal utama
+
+\begin{verbatim}
+            1             0             0             0             0 
+            1             1             0             0             0 
+            0             2             1             0             0 
+            0             0             3             1             0 
+            0             0             0             4             1 
+\end{verbatim}
+
+Perhatikan bahwa kita tidak mengubah matriks A. Kita mendapatkan sebuah matriks baru sebagai hasil dari setdiag().
+
+Berikut adalah sebuah fungsi yang mengembalikan sebuah matriks tri-diagonal.
+
+\textgreater function tridiag (n,a,b,c) := setdiag(setdiag(b*id(n),1,c),-1,a); \ldots{}\\
+\textgreater{} tridiag(5,1,2,3)
+
+\begin{verbatim}
+            2             3             0             0             0 
+            1             2             3             0             0 
+            0             1             2             3             0 
+            0             0             1             2             3 
+            0             0             0             1             2 
+\end{verbatim}
+
+Diagonal sebuah matriks juga dapat diekstrak dari matriks. Untuk mendemonstrasikan hal ini, kami merestrukturisasi vektor 1:9 menjadi matriks 3x3.
+
+\textgreater A=redim(1:9,3,3)
+
+\begin{verbatim}
+            1             2             3 
+            4             5             6 
+            7             8             9 
+\end{verbatim}
+
+Sekarang kita bisa mengekstrak diagonal.
+
+\textgreater d=getdiag(A,0)
+
+\begin{verbatim}
+[1,  5,  9]
+\end{verbatim}
+
+Contoh: Kita dapat membagi matriks dengan diagonalnya. Bahasa matriks memperhatikan bahwa vektor kolom d diterapkan ke matriks baris demi baris.
+
+\textgreater fraction A/d'
+
+\begin{verbatim}
+        1         2         3 
+      4/5         1       6/5 
+      7/9       8/9         1 
+\end{verbatim}
+
+\chapter{Vektorisasi}\label{vektorisasi}
+
+Hampir semua fungsi di Euler juga dapat digunakan untuk input matriks dan vektor, jika hal ini masuk akal.
+
+Sebagai contoh, fungsi sqrt() menghitung akar kuadrat dari semua elemen vektor atau matriks.
+
+\textgreater sqrt(1:3)
+
+\begin{verbatim}
+[1,  1.41421,  1.73205]
+\end{verbatim}
+
+Jadi, Anda dapat dengan mudah membuat tabel nilai. Ini adalah salah satu cara untuk memplot sebuah fungsi (alternatif lainnya menggunakan ekspresi).
+
+\textgreater x=1:0.01:5; y=log(x)/x\^{}2; // terlalu panjang untuk ditampikan
+
+Dengan ini dan operator titik dua a:delta:b, vektor nilai fungsi dapat dihasilkan dengan mudah.
+
+Pada contoh berikut, kita membuat vektor nilai t{[}i{]} dengan jarak 0.1 dari -1 hingga 1. Kemudian kita membuat vektor nilai dari fungsi
+
+lateks: s = t\^{}3-t
+
+\textgreater t=-1:0.1:1; s=t\^{}3-t
+
+\begin{verbatim}
+[0,  0.171,  0.288,  0.357,  0.384,  0.375,  0.336,  0.273,  0.192,
+0.099,  0,  -0.099,  -0.192,  -0.273,  -0.336,  -0.375,  -0.384,
+-0.357,  -0.288,  -0.171,  0]
+\end{verbatim}
+
+EMT memperluas operator untuk skalar, vektor, dan matriks dengan cara yang jelas.
+
+Misalnya, vektor kolom dikalikan vektor baris diperluas menjadi matriks, jika operator diterapkan. Berikut ini, v' adalah vektor yang ditransposisikan (vektor kolom).
+
+\textgreater shortest (1:5)*(1:5)'
+
+\begin{verbatim}
+     1      2      3      4      5 
+     2      4      6      8     10 
+     3      6      9     12     15 
+     4      8     12     16     20 
+     5     10     15     20     25 
+\end{verbatim}
+
+Perhatikan, bahwa ini sangat berbeda dengan hasil kali matriks. Hasil kali matriks dilambangkan dengan sebuah titik ``.'' dalam EMT.
+
+\textgreater(1:5).(1:5)'
+
+\begin{verbatim}
+55
+\end{verbatim}
+
+Secara default, vektor baris dicetak dalam format ringkas.
+
+\textgreater{[}1,2,3,4{]}
+
+\begin{verbatim}
+[1,  2,  3,  4]
+\end{verbatim}
+
+Untuk matriks, operator khusus . menyatakan perkalian matriks, dan A' menyatakan transposisi. Matriks 1x1 dapat digunakan seperti halnya bilangan real.
+
+\textgreater v:={[}1,2{]}; v.v', \%\^{}2
+
+\begin{verbatim}
+5
+25
+\end{verbatim}
+
+Untuk mentransposisikan matriks, kita menggunakan apostrophe.
+
+\textgreater v=1:4; v'
+
+\begin{verbatim}
+            1 
+            2 
+            3 
+            4 
+\end{verbatim}
+
+Jadi kita dapat menghitung matriks A dikali vektor b.
+
+\textgreater A={[}1,2,3,4;5,6,7,8{]}; A.v'
+
+\begin{verbatim}
+           30 
+           70 
+\end{verbatim}
+
+Perhatikan bahwa v masih merupakan vektor baris. Jadi v'.v berbeda dengan v.v'.
+
+\textgreater v'.v
+
+\begin{verbatim}
+            1             2             3             4 
+            2             4             6             8 
+            3             6             9            12 
+            4             8            12            16 
+\end{verbatim}
+
+v.v' menghitung norma v kuadrat untuk vektor baris v. Hasilnya adalah vektor 1x1, yang berfungsi seperti bilangan real.
+
+\textgreater v.v'
+
+\begin{verbatim}
+30
+\end{verbatim}
+
+Ada juga norma fungsi (bersama dengan banyak fungsi Aljabar Linier lainnya).
+
+\textgreater norm(v)\^{}2
+
+\begin{verbatim}
+30
+\end{verbatim}
+
+Operator dan fungsi mematuhi bahasa matriks Euler.
+
+Berikut ini adalah ringkasan aturannya.
+
+\begin{itemize}
+\item
+  Sebuah fungsi yang diterapkan pada vektor atau matriks diterapkan
+\item
+  pada setiap elemen.
+\item
+  Operator yang beroperasi pada dua matriks dengan ukuran yang sama
+\item
+  diterapkan secara berpasangan pada elemen-elemen matriks.
+\item
+  Jika dua matriks memiliki dimensi yang berbeda, keduanya diperluas
+\item
+  dengan cara yang masuk akal, sehingga memiliki ukuran yang sama.
+\end{itemize}
+
+Misalnya, nilai skalar dikalikan vektor mengalikan nilai tersebut dengan setiap elemen vektor. Atau matriks dikali vektor (dengan *, bukan .) memperluas vektor ke ukuran matriks dengan menduplikasinya.
+
+Berikut ini adalah kasus sederhana dengan operator \^{}.
+
+\textgreater{[}1,2,3{]}\^{}2
+
+\begin{verbatim}
+[1,  4,  9]
+\end{verbatim}
+
+Ini adalah kasus yang lebih rumit. Vektor baris dikalikan vektor kolom memperluas keduanya dengan menduplikasi.
+
+\textgreater v:={[}1,2,3{]}; v*v'
+
+\begin{verbatim}
+            1             2             3 
+            2             4             6 
+            3             6             9 
+\end{verbatim}
+
+Perhatikan bahwa hasil kali skalar menggunakan hasil kali matriks, bukan tanda *!
+
+\textgreater v.v'
+
+\begin{verbatim}
+14
+\end{verbatim}
+
+Ada banyak fungsi untuk matriks. Kami memberikan daftar singkat. Anda harus membaca dokumentasi untuk informasi lebih lanjut mengenai perintah-perintah ini.
+
+sum,prod menghitung jumlah dan hasil kali dari baris-baris\\
+cumsum,cumprod melakukan hal yang sama secara kumulatif\\
+menghitung nilai ekstrem dari setiap baris\\
+extrema mengembalikan vektor dengan informasi ekstrem\\
+diag(A,i) mengembalikan diagonal ke-i\\
+setdiag(A,i,v) menetapkan diagonal ke-i\\
+id(n) matriks identitas\\
+det(A) determinan\\
+charpoly(A) polinomial karakteristik\\
+eigenvalues(A) nilai eigen
+
+\textgreater v*v, sum(v*v), cumsum(v*v)
+
+\begin{verbatim}
+[1,  4,  9]
+14
+[1,  5,  14]
+\end{verbatim}
+
+Operator : menghasilkan vektor baris dengan spasi yang sama, opsional dengan ukuran langkah.
+
+\textgreater1:4, 1:2:10
+
+\begin{verbatim}
+[1,  2,  3,  4]
+[1,  3,  5,  7,  9]
+\end{verbatim}
+
+Untuk menggabungkan matriks dan vektor, terdapat operator ``\textbar{}'' dan ``\_''.
+
+\textgreater{[}1,2,3{]}\textbar{[}4,5{]}, {[}1,2,3{]}\_1
+
+\begin{verbatim}
+[1,  2,  3,  4,  5]
+            1             2             3 
+            1             1             1 
+\end{verbatim}
+
+Elemen-elemen dari sebuah matriks disebut dengan ``A{[}i,j{]}''.
+
+\textgreater A:={[}1,2,3;4,5,6;7,8,9{]}; A{[}2,3{]}
+
+\begin{verbatim}
+6
+\end{verbatim}
+
+Untuk vektor baris atau kolom, v{[}i{]} adalah elemen ke-i dari vektor tersebut. Untuk matriks, ini mengembalikan baris ke-i dari matriks.
+
+\textgreater v:={[}2,4,6,8{]}; v{[}3{]}, A{[}3{]}
+
+\begin{verbatim}
+6
+[7,  8,  9]
+\end{verbatim}
+
+Indeks juga dapat berupa vektor baris dari indeks. : menunjukkan semua indeks.
+
+\textgreater v{[}1:2{]}, A{[}:,2{]}
+
+\begin{verbatim}
+[2,  4]
+            2 
+            5 
+            8 
+\end{verbatim}
+
+Bentuk singkat untuk : adalah menghilangkan indeks sepenuhnya.
+
+\textgreater A{[},2:3{]}
+
+\begin{verbatim}
+            2             3 
+            5             6 
+            8             9 
+\end{verbatim}
+
+Untuk tujuan vektorisasi, elemen-elemen matriks dapat diakses seolah-olah mereka adalah vektor.
+
+\textgreater A\{4\}
+
+\begin{verbatim}
+4
+\end{verbatim}
+
+Sebuah matriks juga dapat diratakan, dengan menggunakan fungsi redim(). Hal ini diimplementasikan dalam fungsi flatten().
+
+\textgreater redim(A,1,prod(size(A))), flatten(A)
+
+\begin{verbatim}
+[1,  2,  3,  4,  5,  6,  7,  8,  9]
+[1,  2,  3,  4,  5,  6,  7,  8,  9]
+\end{verbatim}
+
+Untuk menggunakan matriks untuk tabel, mari kita atur ulang ke format default, dan menghitung tabel nilai sinus dan kosinus. Perhatikan bahwa sudut dalam radian secara default.
+
+\textgreater defformat; w=0°:45°:360°; w=w'; deg(w)
+
+\begin{verbatim}
+            0 
+           45 
+           90 
+          135 
+          180 
+          225 
+          270 
+          315 
+          360 
+\end{verbatim}
+
+Sekarang kita menambahkan kolom ke matriks.
+
+\textgreater M = deg(w)\textbar w\textbar cos(w)\textbar sin(w)
+
+\begin{verbatim}
+            0             0             1             0 
+           45      0.785398      0.707107      0.707107 
+           90        1.5708             0             1 
+          135       2.35619     -0.707107      0.707107 
+          180       3.14159            -1             0 
+          225       3.92699     -0.707107     -0.707107 
+          270       4.71239             0            -1 
+          315       5.49779      0.707107     -0.707107 
+          360       6.28319             1             0 
+\end{verbatim}
+
+Dengan menggunakan bahasa matriks, kita dapat membuat beberapa tabel dari beberapa fungsi sekaligus.
+
+Pada contoh berikut, kita menghitung t{[}j{]}\^{}i untuk i dari 1 hingga n. Kita mendapatkan sebuah matriks, di mana setiap baris adalah tabel t\^{}i untuk satu i. Yaitu, matriks tersebut memiliki elemen-elemen lateks: a\_\{i,j\} = t\_j\^{}i, \qad 1 \le j \le 101, \qad 1 \le i \le n
+
+Sebuah fungsi yang tidak bekerja untuk input vektor harus ``divektorkan''. Hal ini dapat dicapai dengan kata kunci ``map'' dalam definisi fungsi. Kemudian fungsi akan dievaluasi untuk setiap elemen parameter vektor.
+
+Integrasi numerik integrate() hanya bekerja untuk batas interval skalar. Jadi kita perlu membuat vektornya.
+
+\textgreater function map f(x) := integrate(``x\^{}x'',1,x)
+
+Kata kunci ``map'' membuat vektor fungsi. Fungsi ini sekarang akan bekerja
+
+untuk vektor angka.
+
+\textgreater f({[}1:5{]})
+
+\begin{verbatim}
+[0,  2.05045,  13.7251,  113.336,  1241.03]
+\end{verbatim}
+
+\chapter{Sub-Matriks dan Elemen Matriks}\label{sub-matriks-dan-elemen-matriks}
+
+Untuk mengakses elemen matriks, gunakan notasi kurung.
+
+\textgreater A={[}1,2,3;4,5,6;7,8,9{]}, A{[}2,2{]}
+
+\begin{verbatim}
+            1             2             3 
+            4             5             6 
+            7             8             9 
+5
+\end{verbatim}
+
+Kita dapat mengakses baris lengkap dari sebuah matriks.
+
+\textgreater A{[}2{]}
+
+\begin{verbatim}
+[4,  5,  6]
+\end{verbatim}
+
+Untuk vektor baris atau kolom, ini mengembalikan elemen vektor.
+
+\textgreater v=1:3; v{[}2{]}
+
+\begin{verbatim}
+2
+\end{verbatim}
+
+Untuk memastikan, Anda mendapatkan baris pertama untuk matriks 1xn dan mxn, tentukan semua kolom menggunakan indeks kedua yang kosong.
+
+\textgreater A{[}2,{]}
+
+\begin{verbatim}
+[4,  5,  6]
+\end{verbatim}
+
+Jika indeks adalah vektor indeks, Euler akan mengembalikan baris-baris yang sesuai dari matriks.
+
+Di sini kita menginginkan baris pertama dan kedua dari A.
+
+\begin{verbatim}
+            1             2             3 
+            4             5             6 
+\end{verbatim}
+
+Kita bahkan dapat menyusun ulang A menggunakan vektor indeks. Tepatnya, kita tidak mengubah A di sini, tetapi menghitung versi susunan ulang dari A.
+
+\begin{verbatim}
+            7             8             9 
+            4             5             6 
+            1             2             3 
+\end{verbatim}
+
+Trik indeks juga bekerja dengan kolom.
+
+Contoh ini memilih semua baris A dan kolom kedua dan ketiga.
+
+\textgreater A{[}1:3,2:3{]}
+
+\begin{verbatim}
+            2             3 
+            5             6 
+            8             9 
+\end{verbatim}
+
+Untuk singkatan ``:'' menunjukkan semua indeks baris atau kolom.
+
+\textgreater A{[}:,3{]}
+
+\begin{verbatim}
+            3 
+            6 
+            9 
+\end{verbatim}
+
+Sebagai alternatif, biarkan indeks pertama kosong.
+
+\textgreater A{[},2:3{]}
+
+\begin{verbatim}
+            2             3 
+            5             6 
+            8             9 
+\end{verbatim}
+
+Kita juga bisa mendapatkan baris terakhir A.
+
+\textgreater A{[}-1{]}
+
+\begin{verbatim}
+[7,  8,  9]
+\end{verbatim}
+
+Sekarang mari kita ubah elemen-elemen dari A dengan memberikan sebuah submatriks dari A ke suatu nilai. Hal ini sebenarnya mengubah matriks A yang tersimpan.
+
+\textgreater A{[}1,1{]}=4
+
+\begin{verbatim}
+            4             2             3 
+            4             5             6 
+            7             8             9 
+\end{verbatim}
+
+Kita juga dapat menetapkan nilai pada deretan A.
+
+\textgreater A{[}1{]}={[}-1,-1,-1{]}
+
+\begin{verbatim}
+           -1            -1            -1 
+            4             5             6 
+            7             8             9 
+\end{verbatim}
+
+Kami bahkan dapat menetapkan ke sub-matriks jika memiliki ukuran yang tepat.
+
+\textgreater A{[}1:2,1:2{]}={[}5,6;7,8{]}
+
+\begin{verbatim}
+            5             6            -1 
+            7             8             6 
+            7             8             9 
+\end{verbatim}
+
+Selain itu, beberapa jalan pintas diperbolehkan.
+
+\textgreater A{[}1:2,1:2{]}=0
+
+\begin{verbatim}
+            0             0            -1 
+            0             0             6 
+            7             8             9 
+\end{verbatim}
+
+Peringatan: Indeks di luar batas akan mengembalikan matriks kosong, atau pesan kesalahan, tergantung pada pengaturan sistem. Standarnya adalah pesan kesalahan. Namun, ingatlah bahwa indeks negatif dapat digunakan untuk mengakses elemen-elemen matriks yang dihitung dari akhir.
+
+\textgreater A{[}4{]}
+
+\begin{verbatim}
+Row index 4 out of bounds!
+Error in:
+A[4] ...
+    ^
+\end{verbatim}
+
+\chapter{Pengurutan dan Pengocokan}\label{pengurutan-dan-pengocokan}
+
+Fungsi mengurutkan() mengurutkan vektor baris.
+
+\textgreater sort({[}5,6,4,8,1,9{]})
+
+\begin{verbatim}
+[1,  4,  5,  6,  8,  9]
+\end{verbatim}
+
+Sering kali diperlukan untuk mengetahui indeks vektor yang telah diurutkan dalam vektor aslinya. Hal ini dapat digunakan untuk menyusun ulang vektor lain dengan cara yang sama.
+
+Mari kita mengacak sebuah vektor.
+
+\textgreater v=shuffle(1:10)
+
+\begin{verbatim}
+[4,  5,  10,  6,  8,  9,  1,  7,  2,  3]
+\end{verbatim}
+
+Indeks berisi urutan v yang tepat.
+
+\textgreater\{vs,ind\}=sort(v); v{[}ind{]}
+
+\begin{verbatim}
+[1,  2,  3,  4,  5,  6,  7,  8,  9,  10]
+\end{verbatim}
+
+Hal ini juga berlaku untuk vektor string.
+
+\textgreater s={[}``a'',``d'',``e'',``a'',``aa'',``e''{]}
+
+\begin{verbatim}
+a
+d
+e
+a
+aa
+e
+\end{verbatim}
+
+\textgreater\{ss,ind\}=sort(s); ss
+
+\begin{verbatim}
+a
+a
+aa
+d
+e
+e
+\end{verbatim}
+
+Seperti yang Anda lihat, posisi entri ganda agak acak.
+
+\textgreater ind
+
+\begin{verbatim}
+[4,  1,  5,  2,  6,  3]
+\end{verbatim}
+
+Fungsi unique mengembalikan daftar terurut dari elemen unik sebuah vektor.
+
+\textgreater intrandom(1,10,10), unique(\%)
+
+\begin{verbatim}
+[4,  4,  9,  2,  6,  5,  10,  6,  5,  1]
+[1,  2,  4,  5,  6,  9,  10]
+\end{verbatim}
+
+Hal ini juga berlaku untuk vektor string.
+
+\textgreater unique(s)
+
+\begin{verbatim}
+a
+aa
+d
+e
+\end{verbatim}
+
+\chapter{Aljabar Linier}\label{aljabar-linier}
+
+EMT memiliki banyak fungsi untuk menyelesaikan sistem linier, sistem jarang, atau masalah regresi.
+
+Untuk sistem linier Ax=b, Anda dapat menggunakan algoritma Gauss, matriks invers, atau kecocokan linier. Operator A\b menggunakan versi algoritma Gauss.
+
+\textgreater A={[}1,2;3,4{]}; b={[}5;6{]}; A\textbackslash b
+
+\begin{verbatim}
+           -4 
+          4.5 
+\end{verbatim}
+
+Sebagai contoh lain, kita membuat matriks 200x200 dan jumlah barisnya. Kemudian kita selesaikan Ax = b dengan menggunakan matriks kebalikannya. Kita mengukur kesalahan sebagai deviasi maksimal dari semua elemen dari 1, yang tentu saja merupakan solusi yang benar.
+
+\textgreater A=normal(200,200); b=sum(A); longest totalmax(abs(inv(A).b-1))
+
+\begin{verbatim}
+  8.790745908981989e-13 
+\end{verbatim}
+
+Jika sistem tidak memiliki solusi, kecocokan linier meminimalkan norma kesalahan Ax-b.
+
+\textgreater A={[}1,2,3;4,5,6;7,8,9{]}
+
+\begin{verbatim}
+            1             2             3 
+            4             5             6 
+            7             8             9 
+\end{verbatim}
+
+Determinan dari matriks ini adalah 0.
+
+\textgreater det(A)
+
+\begin{verbatim}
+0
+\end{verbatim}
+
+\chapter{Matriks Simbolik}\label{matriks-simbolik}
+
+Maxima memiliki matriks simbolik. Tentu saja, Maxima dapat digunakan untuk masalah aljabar linier sederhana. Kita bisa mendefinisikan matriks untuk Euler dan Maxima dengan \&:=, dan kemudian menggunakannya dalam ekspresi simbolik. Bentuk {[}\ldots{]} yang biasa untuk mendefinisikan matriks dapat digunakan dalam Euler untuk mendefinisikan matriks simbolik.
+
+\textgreater A \&= {[}a,1,1;1,a,1;1,1,a{]}; \$A
+
+\[\begin{pmatrix}a & 1 & 1 \\ 1 & a & 1 \\ 1 & 1 & a \\ \end{pmatrix}\]\textgreater\$\&det(A), \$\&factor(\%)
+
+\[a\,\left(a^2-1\right)-2\,a+2\]\[\left(a-1\right)^2\,\left(a+2\right)\]\textgreater\$\&invert(A) with a=0
+
+\[\begin{pmatrix}-\frac{1}{2} & \frac{1}{2} & \frac{1}{2} \\ \frac{1
+ }{2} & -\frac{1}{2} & \frac{1}{2} \\ \frac{1}{2} & \frac{1}{2} & -
+ \frac{1}{2} \\ \end{pmatrix}\]\textgreater A \&= {[}1,a;b,2{]}; \$A
+
+\[\begin{pmatrix}1 & a \\ b & 2 \\ \end{pmatrix}\]Seperti semua variabel simbolik, matriks ini dapat digunakan dalam ekspresi simbolik lainnya.
+
+\textgreater\$\&det(A-x*ident(2)), \$\&solve(\%,x)
+
+\[\left(1-x\right)\,\left(2-x\right)-a\,b\]\[\left[ x=\frac{3-\sqrt{4\,a\,b+1}}{2} , x=\frac{\sqrt{4\,a\,b+1}+3
+ }{2} \right] \]Nilai eigen juga dapat dihitung secara otomatis. Hasilnya adalah sebuah vektor dengan dua vektor nilai eigen dan kelipatannya.
+
+\textgreater\$\&eigenvalues({[}a,1;1,a{]})
+
+\[\left[ \left[ a-1 , a+1 \right]  , \left[ 1 , 1 \right]  \right] \]Untuk mengekstrak vektor eigen tertentu, diperlukan pengindeksan yang cermat.
+
+\textgreater\$\&eigenvectors({[}a,1;1,a{]}), \&\%{[}2{]}{[}1{]}{[}1{]}
+
+\[\left[ \left[ \left[ a-1 , a+1 \right]  , \left[ 1 , 1 \right] 
+  \right]  , \left[ \left[ \left[ 1 , -1 \right]  \right]  , \left[ 
+ \left[ 1 , 1 \right]  \right]  \right]  \right] \]\\
+{[}1, - 1{]}
+
+Matriks simbolik dapat dievaluasi dalam Euler secara numerik seperti halnya ekspresi simbolik lainnya.
+
+\textgreater A(a=4,b=5)
+
+\begin{verbatim}
+            1             4 
+            5             2 
+\end{verbatim}
+
+Dalam ekspresi simbolis, gunakan dengan.
+
+\textgreater\$\&A with {[}a=4,b=5{]}
+
+\[\begin{pmatrix}1 & 4 \\ 5 & 2 \\ \end{pmatrix}\]Akses ke baris matriks simbolik bekerja seperti halnya matriks numerik.
+
+\textgreater\$\&A{[}1{]}
+
+\[\left[ 1 , a \right] \]Ekspresi simbolik dapat berisi sebuah penugasan. Dan itu mengubah matriks A.
+
+\textgreater\&A{[}1,1{]}:=t+1; \$\&A
+
+\[\begin{pmatrix}t+1 & a \\ b & 2 \\ \end{pmatrix}\]Terdapat fungsi-fungsi simbolik dalam Maxima untuk membuat vektor dan matriks. Untuk hal ini, lihat dokumentasi Maxima atau tutorial tentang Maxima di EMT.
+
+\textgreater v \&= makelist(1/(i+j),i,1,3); \$v
+
+\[\left[ \frac{1}{j+1} , \frac{1}{j+2} , \frac{1}{j+3} \right] \]\textgreater B \&:= {[}1,2;3,4{]}; \$B, \$\&invert(B)
+
+\[\begin{pmatrix}1 & 2 \\ 3 & 4 \\ \end{pmatrix}\]\[\begin{pmatrix}-2 & 1 \\ \frac{3}{2} & -\frac{1}{2} \\ 
+ \end{pmatrix}\]Hasilnya dapat dievaluasi secara numerik dalam Euler. Untuk informasi lebih lanjut tentang Maxima, lihat pengantar Maxima.
+
+\textgreater\$\&invert(B)()
+
+\begin{verbatim}
+           -2             1 
+          1.5          -0.5 
+\end{verbatim}
+
+Euler juga memiliki sebuah fungsi yang kuat xinv(), yang melakukan usaha yang lebih besar dan mendapatkan hasil yang lebih tepat.
+
+Perhatikan, bahwa dengan \&:= matriks B telah didefinisikan sebagai simbolik dalam ekspresi simbolik dan sebagai numerik dalam ekspresi numerik. Jadi kita dapat menggunakannya di sini.
+
+\textgreater longest B.xinv(B)
+
+\begin{verbatim}
+                      1                       0 
+                      0                       1 
+\end{verbatim}
+
+Misalnya, nilai eigen dari A dapat dihitung secara numerik.
+
+\textgreater A={[}1,2,3;4,5,6;7,8,9{]}; real(eigenvalues(A))
+
+\begin{verbatim}
+[16.1168,  -1.11684,  0]
+\end{verbatim}
+
+Atau secara simbolis. Lihat tutorial tentang Maxima untuk mengetahui detailnya.
+
+\textgreater\$\&eigenvalues((\textbf{A?}))
+
+\[\left[ \left[ \frac{15-3\,\sqrt{33}}{2} , \frac{3\,\sqrt{33}+15}{2}
+  , 0 \right]  , \left[ 1 , 1 , 1 \right]  \right] \]\# Nilai Numerik dalam Ekspresi simbolik
+
+Ekspresi simbolik hanyalah sebuah string yang berisi ekspresi. Jika kita ingin mendefinisikan nilai baik untuk ekspresi simbolik maupun ekspresi numerik, kita harus menggunakan ``\&:=''.
+
+\textgreater A \&:= {[}1,pi;4,5{]}
+
+\begin{verbatim}
+            1       3.14159 
+            4             5 
+\end{verbatim}
+
+Masih ada perbedaan antara bentuk numerik dan bentuk simbolik. Ketika mentransfer matriks ke bentuk simbolik, perkiraan pecahan untuk bilangan real akan digunakan.
+
+\textgreater\$\&A
+
+\[\begin{pmatrix}1 & \frac{1146408}{364913} \\ 4 & 5 \\ \end{pmatrix}\]Untuk menghindari hal ini, ada fungsi ``mxmset(variable)''.
+
+\textgreater mxmset(A); \$\&A
+
+\[\begin{pmatrix}1 & 3.141592653589793 \\ 4 & 5 \\ \end{pmatrix}\]Maxima juga dapat menghitung dengan angka floating point, dan bahkan dengan angka mengambang yang besar dengan 32 digit. Namun, evaluasinya jauh lebih lambat.
+
+\textgreater\$\&bfloat(sqrt(2)), \$\&float(sqrt(2))
+
+\[1.4142135623730950488016887242097_B \times 10^{0}\]\[1.414213562373095\]Ketepatan angka floating point yang besar dapat diubah.
+
+\textgreater\&fpprec:=100; \&bfloat(pi)
+
+\begin{verbatim}
+        3.14159265358979323846264338327950288419716939937510582097494\
+4592307816406286208998628034825342117068b0
+\end{verbatim}
+
+Variabel numerik dapat digunakan dalam ekspresi simbolik apa pun dengan menggunakan ``(\textbf{var?})''.
+
+Perhatikan bahwa ini hanya diperlukan, jika variabel telah didefinisikan dengan ``:='' atau ``='' sebagai variabel numerik.
+
+\textgreater B:={[}1,pi;3,4{]}; \$\&det((\textbf{B?}))
+
+\[-5.424777960769379\]\# Demo - Suku Bunga
+
+Di bawah ini, kami menggunakan Euler Math Toolbox (EMT) untuk menghitung suku bunga. Kami melakukannya secara numerik dan simbolis untuk menunjukkan kepada Anda bagaimana Euler dapat digunakan untuk memecahkan masalah kehidupan nyata.
+
+Asumsikan Anda memiliki modal awal sebesar 5000 (katakanlah dalam dolar).
+
+\textgreater K=5000
+
+\begin{verbatim}
+5000
+\end{verbatim}
+
+Sekarang kita asumsikan suku bunga 3\% per tahun. Mari kita tambahkan satu suku bunga sederhana dan hitung hasilnya.
+
+\textgreater K*1.03
+
+\begin{verbatim}
+5150
+\end{verbatim}
+
+Euler juga akan memahami sintaks berikut ini.
+
+\textgreater K+K*3\%
+
+\begin{verbatim}
+5150
+\end{verbatim}
+
+Tetapi lebih mudah untuk menggunakan faktor
+
+\textgreater q=1+3\%, K*q
+
+\begin{verbatim}
+1.03
+5150
+\end{verbatim}
+
+Untuk 10 tahun, kita cukup mengalikan faktor-faktor tersebut dan mendapatkan nilai akhir dengan suku bunga majemuk.
+
+\textgreater K*q\^{}10
+
+\begin{verbatim}
+6719.58189672
+\end{verbatim}
+
+Untuk tujuan kita, kita bisa menetapkan formatnya menjadi 2 digit setelah titik desimal.
+
+\textgreater format(12,2); K*q\^{}10
+
+\begin{verbatim}
+    6719.58 
+\end{verbatim}
+
+Mari kita cetak angka yang dibulatkan menjadi 2 digit dalam kalimat lengkap.
+
+\textgreater{}``Starting from'' + K + ``\$ you get'' + round(K*q\^{}10,2) + ``\$.''
+
+\begin{verbatim}
+Starting from 5000$ you get 6719.58$.
+\end{verbatim}
+
+Bagaimana jika kita ingin mengetahui hasil antara dari tahun ke-1 hingga tahun ke-9? Untuk hal ini, bahasa matriks Euler sangat membantu. Anda tidak perlu menulis perulangan, tetapi cukup masukkan
+
+\textgreater K*q\^{}(0:10)
+
+\begin{verbatim}
+Real 1 x 11 matrix
+
+    5000.00     5150.00     5304.50     5463.64     ...
+\end{verbatim}
+
+Bagaimana keajaiban ini bekerja? Pertama, ekspresi 0:10 mengembalikan sebuah vektor bilangan bulat.
+
+\textgreater short 0:10
+
+\begin{verbatim}
+[0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10]
+\end{verbatim}
+
+Kemudian semua operator dan fungsi dalam Euler dapat diterapkan pada vektor elemen demi elemen. Jadi
+
+\textgreater short q\^{}(0:10)
+
+\begin{verbatim}
+[1,  1.03,  1.0609,  1.0927,  1.1255,  1.1593,  1.1941,  1.2299,
+1.2668,  1.3048,  1.3439]
+\end{verbatim}
+
+adalah vektor faktor q\^{}0 hingga q\^{}10. Ini dikalikan dengan K, dan kita mendapatkan vektor nilai.
+
+\textgreater VK=K*q\^{}(0:10);
+
+Tentu saja, cara yang realistis untuk menghitung suku bunga ini adalah dengan membulatkan ke sen terdekat setelah setiap tahun. Mari kita tambahkan fungsi untuk ini.
+
+\textgreater function oneyear (K) := round(K*q,2)
+
+Mari kita bandingkan kedua hasil tersebut, dengan dan tanpa pembulatan.
+
+\textgreater longest oneyear(1234.57), longest 1234.57*q
+
+\begin{verbatim}
+                1271.61 
+              1271.6071 
+\end{verbatim}
+
+Sekarang tidak ada rumus sederhana untuk tahun ke-n, dan kita harus mengulang selama bertahun-tahun. Euler menyediakan banyak solusi untuk ini.
+
+Cara termudah adalah iterasi fungsi, yang mengulang fungsi yang diberikan beberapa kali.
+
+\textgreater VKr=iterate(``oneyear'',5000,10)
+
+\begin{verbatim}
+Real 1 x 11 matrix
+
+    5000.00     5150.00     5304.50     5463.64     ...
+\end{verbatim}
+
+Kita bisa mencetaknya dengan cara yang bersahabat, menggunakan format kami dengan angka desimal yang tetap.
+
+\textgreater VKr'
+
+\begin{verbatim}
+    5000.00 
+    5150.00 
+    5304.50 
+    5463.64 
+    5627.55 
+    5796.38 
+    5970.27 
+    6149.38 
+    6333.86 
+    6523.88 
+    6719.60 
+\end{verbatim}
+
+Untuk mendapatkan elemen tertentu dari vektor, kita menggunakan indeks dalam tanda kurung siku.
+
+\textgreater VKr{[}2{]}, VKr{[}1:3{]}
+
+\begin{verbatim}
+    5150.00 
+    5000.00     5150.00     5304.50 
+\end{verbatim}
+
+Yang mengejutkan, kita juga dapat menggunakan vektor indeks. Ingatlah bahwa 1:3 menghasilkan vektor {[}1,2,3{]}.
+
+Mari kita bandingkan elemen terakhir dari nilai yang dibulatkan dengan nilai penuh.
+
+\textgreater VKr{[}-1{]}, VK{[}-1{]}
+
+\begin{verbatim}
+    6719.60 
+    6719.58 
+\end{verbatim}
+
+Perbedaannya sangat kecil.
+
+\chapter{Menyelesaikan Persamaan}\label{menyelesaikan-persamaan}
+
+Sekarang kita ambil fungsi yang lebih maju, yang menambahkan tingkat uang tertentu setiap tahun.
+
+\textgreater function onepay (K) := K*q+R
+
+Kita tidak perlu menentukan q atau R untuk definisi fungsi. Hanya jika kita menjalankan perintah, kita harus mendefinisikan nilai-nilai ini. Kami memilih R = 200.
+
+\textgreater R=200; iterate(``onepay'',5000,10)
+
+\begin{verbatim}
+Real 1 x 11 matrix
+
+    5000.00     5350.00     5710.50     6081.82     ...
+\end{verbatim}
+
+Bagaimana jika kita menghapus jumlah yang sama setiap tahun?
+
+\textgreater R=-200; iterate(``onepay'',5000,10)
+
+\begin{verbatim}
+Real 1 x 11 matrix
+
+    5000.00     4950.00     4898.50     4845.45     ...
+\end{verbatim}
+
+Kami melihat bahwa uangnya berkurang. Jelas, jika kita hanya mendapatkan 150 bunga di tahun pertama, tetapi menghapus 200 bunga, kita kehilangan uang setiap tahun.
+
+Bagaimana kita dapat menentukan berapa tahun uang itu akan bertahan? Kita harus menulis perulangan untuk ini. Cara termudah adalah dengan melakukan perulangan yang cukup lama.
+
+\textgreater VKR=iterate(``onepay'',5000,50)
+
+\begin{verbatim}
+Real 1 x 51 matrix
+
+    5000.00     4950.00     4898.50     4845.45     ...
+\end{verbatim}
+
+Dengan menggunakan bahasa matriks, kita dapat menentukan nilai negatif pertama dengan cara berikut.
+
+\textgreater min(nonzeros(VKR\textless0))
+
+\begin{verbatim}
+      48.00 
+\end{verbatim}
+
+Alasannya adalah karena nonzeros(VKR\textless0) mengembalikan vektor dengan indeks i, di mana VKR{[}i{]}\textless0, dan min menghitung indeks minimal.
+
+Karena vektor selalu dimulai dengan indeks 1, maka jawabannya adalah 47 tahun.
+
+Fungsi iterate() memiliki satu trik lagi. Fungsi ini dapat menerima kondisi akhir sebagai argumen. Kemudian fungsi ini akan mengembalikan nilai dan jumlah iterasi.
+
+\textgreater\{x,n\}=iterate(``onepay'',5000,till=``x\textless0''); x, n,
+
+\begin{verbatim}
+     -19.83 
+      47.00 
+\end{verbatim}
+
+Mari kita coba menjawab pertanyaan yang lebih ambigu. Anggaplah kita tahu bahwa nilainya adalah 0 setelah 50 tahun. Berapakah tingkat suku bunganya?
+
+Ini adalah pertanyaan yang hanya bisa dijawab secara numerik. Di bawah ini, kami akan menurunkan rumus yang diperlukan. Kemudian Anda akan melihat bahwa tidak ada rumus yang mudah untuk suku bunga. Namun untuk saat ini, kita akan mencari solusi numerik.
+
+Langkah pertama adalah mendefinisikan sebuah fungsi yang melakukan iterasi sebanyak n kali. Kita tambahkan semua parameter ke fungsi ini.
+
+\textgreater function f(K,R,P,n) := iterate(``x*(1+P/100)+R'',K,n;P,R){[}-1{]}
+
+Perulangannya sama seperti di atas
+
+latex:x\{n+1\}=x\_n\cdot\kiri(1+\frac{P}{100}\kanan)+R
+
+\textgreater f(5000,-200,3,47)
+
+\begin{verbatim}
+     -19.83 
+\end{verbatim}
+
+Now we can solve our problem.
+
+\textgreater solve(``f(5000,-200,x,50)'',3)
+
+\begin{verbatim}
+       3.15 
+\end{verbatim}
+
+Rutin penyelesaian menyelesaikan ekspresi = 0 untuk variabel x. Jawabannya adalah 3,15\% per tahun. Kita mengambil nilai awal 3\% untuk algoritma ini. Fungsi solve() selalu membutuhkan nilai awal.
+
+Kita dapat menggunakan fungsi yang sama untuk menyelesaikan pertanyaan berikut: Berapa banyak yang dapat kita hapus per tahun sehingga modal awal habis setelah 20 tahun dengan asumsi tingkat bunga 3\% per tahun. Kita mengambil nilai awal 3\% untuk algoritma ini. Fungsi solve() selalu membutuhkan nilai awal.
+
+Kita dapat menggunakan fungsi yang sama untuk menyelesaikan pertanyaan berikut: Berapa banyak yang dapat kita hapus per tahun sehingga modal awal habis setelah 20 tahun dengan asumsi tingkat bunga 3\% per tahun.
+
+\textgreater solve(``f(5000,x,3,20)'',-200)
+
+\begin{verbatim}
+    -336.08 
+\end{verbatim}
+
+Perhatikan bahwa Anda tidak dapat menyelesaikan jumlah tahun, karena fungsi kita mengasumsikan n sebagai nilai bilangan bulat.
+
+\section{Solusi Simbolik untuk Masalah Suku Bunga}\label{solusi-simbolik-untuk-masalah-suku-bunga}
+
+Kita dapat menggunakan bagian simbolik dari Euler untuk mempelajari masalah ini. Pertama, kita mendefinisikan fungsi onepay() secara simbolik.
+
+\textgreater function op(K) \&= K*q+R; \$\&op(K)
+
+\[R+q\,K\]Sekarang kita dapat mengulangi hal ini.
+
+\textgreater\$\&op(op(op(op(K)))), \$\&expand(\%)
+
+\[q\,\left(q\,\left(q\,\left(R+q\,K\right)+R\right)+R\right)+R\]\[q^3\,R+q^2\,R+q\,R+R+q^4\,K\]Kita melihat sebuah pola. Setelah n periode, kita memiliki
+
+\[K_n = q^n K + R (1+q+\ dots+q^{n-1}) = q^n K + \frac{q^n-1}{q-1} R\]Rumus tersebut adalah rumus untuk jumlah geometris, yang dikenal dengan Maxima.
+
+\textgreater\&sum(q\^{}k,k,0,n-1); \$\& \% = ev(\%,simpsum)
+
+\[\sum_{k=0}^{n-1}{q^{k}}=\frac{q^{n}-1}{q-1}\]Ini sedikit rumit. Penjumlahan dievaluasi dengan flag ``simpsum'' untuk menguranginya menjadi hasil bagi.
+
+Mari kita buat sebuah fungsi untuk ini.
+
+\textgreater function fs(K,R,P,n) \&= (1+P/100)\^{}n*K + ((1+P/100)\^{}n-1)/(P/100)*R; \$\&fs(K,R,P,n)
+
+\[\frac{100\,\left(\left(\frac{P}{100}+1\right)^{n}-1\right)\,R}{P}+K
+ \,\left(\frac{P}{100}+1\right)^{n}\]Fungsi ini melakukan hal yang sama seperti fungsi f kita sebelumnya. Tetapi fungsi ini lebih efektif.
+
+\textgreater longest f(5000,-200,3,47), longest fs(5000,-200,3,47)
+
+\begin{verbatim}
+     -19.82504734650985 
+     -19.82504734652684 
+\end{verbatim}
+
+Sekarang kita dapat menggunakannya untuk menanyakan waktu n.~Kapan modal kita habis? Perkiraan awal kita adalah 30 tahun.
+
+\textgreater solve(``fs(5000,-330,3,x)'',30)
+
+\begin{verbatim}
+      20.51 
+\end{verbatim}
+
+Jawaban ini mengatakan bahwa nilai tersebut akan menjadi negatif setelah 21 tahun.
+
+Kita juga bisa menggunakan sisi simbolis dari Euler untuk menghitung rumus pembayaran.
+
+Asumsikan kita mendapatkan pinjaman sebesar K, dan membayar n kali pembayaran sebesar R (dimulai setelah tahun pertama) sehingga menyisakan sisa utang sebesar Kn (pada saat pembayaran terakhir). Rumus untuk hal ini adalah sebagai berikut
+
+\textgreater equ \&= fs(K,R,P,n)=Kn; \$\&equ
+
+\[\frac{100\,\left(\left(\frac{P}{100}+1\right)^{n}-1\right)\,R}{P}+K
+ \,\left(\frac{P}{100}+1\right)^{n}={\it Kn}\]Biasanya rumus ini diberikan dalam bentuk
+
+lateks: i = \frac{P}{100}
+
+\textgreater equ \&= (equ with P=100*i); \$\&equ
+
+\[\frac{\left(\left(i+1\right)^{n}-1\right)\,R}{i}+\left(i+1\right)^{
+ n}\,K={\it Kn}\]Kita dapat menyelesaikan laju R secara simbolis.
+
+\textgreater\$\&solve(equ,R)
+
+\[\left[ R=\frac{i\,{\it Kn}-i\,\left(i+1\right)^{n}\,K}{\left(i+1
+ \right)^{n}-1} \right] \]Seperti yang dapat Anda lihat dari rumusnya, fungsi ini mengembalikan kesalahan floating point untuk i = 0. Euler tetap memplotnya.
+
+Tentu saja, kita memiliki batas berikut.
+
+\textgreater\$\&limit(R(5000,0,x,10),x,0)
+
+\[\lim_{x\rightarrow 0}{R\left(5000 , 0 , x , 10\right)}\]Jelasnya, tanpa bunga kita harus membayar kembali 10 suku bunga 500.
+
+Persamaan ini juga dapat diselesaikan untuk n.~Akan terlihat lebih baik jika kita menerapkan beberapa penyederhanaan.
+
+\textgreater fn \&= solve(equ,n) \textbar{} ratsimp; \$\&fn
+
+\[\left[ n=\frac{\log \left(\frac{R+i\,{\it Kn}}{R+i\,K}\right)}{
+ \log \left(i+1\right)} \right] \]---
+
+\chapter{LATIHAN}\label{latihan}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Sederhanakan bentuk eksponen berikut
+\end{enumerate}
+
+\[\left( \frac {24a^{10}b^{-8}c^7}{12a^6b^{-3}c^5} \right)^{-5}\]Penyelesaian :
+
+\textgreater\$\&((24*a\textsuperscript{10*b}(-8)*c*7) / (12*a\textsuperscript{6*b}(-3)*c\textsuperscript{5))}(-5)
+
+\[\frac{b^{25}\,c^{20}}{537824\,a^{20}}\]2. Sederhanakan bentuk eksponen berikut
+
+\[\left( \frac {125p^{12}q^{-14}r^{22}}{25p^8q^6r^{-15}} \right)^{-4}\]Penyelesaian :
+
+\textgreater\$\&((125*p\textsuperscript{12*q}-14*r\textsuperscript{22)/(25*p}8*q\textsuperscript{6*r}-15))\^{}(-4)
+
+\[\frac{q^{80}}{625\,p^{16}\,r^{148}}\]3. Hitunglah
+
+\[\frac {4(8-6)^2-4\cdot3+2\cdot8}{3^1+19^0}\]Penyelesaian :
+
+\textgreater\$\&(4*(8-6)\textsuperscript{2-4*3+2*8)/(3}1+19\^{}0)
+
+\[5\]4. Hitunglah
+
+\[\frac{[4(8-6)^2+4](3-2\cdot8)}{2^2(2^3+5)}\]Penyelesaian :
+
+\textgreater\$\&((4*(8-6)\textsuperscript{2+4)*(3-2*8))/(2}2*(2\^{}3+5))
+
+\[-5\]5. Hitunglah
+
+\[(2^6)*(2^{-3})/(2^{10})/(2^{-8})\]
+
+Penyelesaian :
+
+\textgreater\$\&(2\textsuperscript{6)*(2}(-3))/(2\textsuperscript{(10))/(2}(-8))
+
+\[2\]6. Menyelesaikan pemfaktoran
+
+\[t^2+8t+15\]Penyelesaian :
+
+\textgreater\$\&factor(t\^{}2+8*t+15)
+
+\[\left(t+3\right)\,\left(t+5\right)\]7. Hitunglah
+
+\[{(3x^{2}-2x-x^{3}+2)}-{(5x^{2}-8x-x^{3}+4)}\]Penyelesaian :
+
+\textgreater\$\&(3*x\textsuperscript{2-2*x-x}3+2)-(5*x\textsuperscript{2-8*x-x}3+4)
+
+\[-2\,x^2+6\,x-2\]8. Menyelesaikan operasi yang di tunjukkan
+
+\[(2x+3y+z-7)+(4x-2y-z+8)+(-3x+y-2z-4)\]Penyelesaian :
+
+\textgreater\$\&(2*x+3*y+z-7)+(4*x-2*y-z+8)+(-3*x+y-2*z-4)
+
+\[-2\,z+2\,y+3\,x-3\]9. Hitunglah
+
+\[(6xy^3)(9x^4y^2)\]
+
+Penyelesaian :
+
+\textgreater\$\&(6*x*y\textsuperscript{3)*(9*(x}4)*y\^{}2)
+
+\[54\,x^5\,y^5\]\textgreater{}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Hitunglah
+\end{enumerate}
+
+\[(3a^2)(-7a^4)\]
+
+Penyelesaian :
+
+\textgreater\$\&(3*a\textsuperscript{2)*(-7*a}4)
+
+\[-21\,a^6\]11. Hitunglah :
+
+\[x^3-4x^2+5x-20\]Penyelesaian :
+
+\textgreater\$\&factor(x\textsuperscript{3-4*x}2+5*x-20)
+
+\[\left(x-4\right)\,\left(x^2+5\right)\]12. Faktorkan
+
+\[250z^4-2z\]Penyelesaian :
+
+\textgreater\$\&factor(250*z\^{}4-2*z)
+
+\[2\,z\,\left(5\,z-1\right)\,\left(25\,z^2+5\,z+1\right)\]13. Faktorkan :
+
+\[18a^2b-15ab^2\]Penyelesaian :
+
+\textgreater\$\&factor(18*a\textsuperscript{2*b-15*a*b}2)
+
+\[-3\,a\,b\,\left(5\,b-6\,a\right)\]14. Faktorkan
+
+\[25ab^4-25az^4\]Penyelesaian :
+
+\textgreater\$\&factor(25*a*b\textsuperscript{4-25*a*z}4)
+
+\[-25\,a\,\left(z-b\right)\,\left(z+b\right)\,\left(z^2+b^2\right)\]15. Faktorkan :
+
+\[16a^7b+54ab^7\]Penyelesaian :
+
+\textgreater\$\&factor(16*a\textsuperscript{7*b+54*a*b}7)
+
+\[2\,a\,b\,\left(3\,b^2+2\,a^2\right)\,\left(9\,b^4-6\,a^2\,b^2+4\,a^
+ 4\right)\]16. Hitunglah :
+
+\[m^6+8m^3-20\]Penyelesaian :
+
+\textgreater\$\&factor(m\textsuperscript{6+8*m}3-20)
+
+\[\left(m^3-2\right)\,\left(m^3+10\right)\]17. Asumsikan bahwa semua eksponen adalah bilangan asli. Kalikan
+
+\[(a^n+b^n)(a^n-b^n)\]Penyelesaian :
+
+\textgreater\$\&expand ((a\textsuperscript{n+b}n)*(a\textsuperscript{n-b}n))
+
+\[a^{2\,n}-b^{2\,n}\]18. Asumsikan bahwa semua eksponen adalah bilangan asli. Kalikan
+
+\[(x^{3m}-t^{5n})^2\]Penyelesaian :
+
+\textgreater\$\&expand((x\textsuperscript{(3*m)-t}(5*n))\^{}2)
+
+\[x^{6\,m}-2\,t^{5\,n}\,x^{3\,m}+t^{10\,n}\]19. Asumsikan bahwa semua eksponen adalah bilangan asli. Kalikan
+
+\[(a+b+c)^2\]Penyelesaian :
+
+\textgreater\$\&expand((a+b+c)\^{}2)
+
+\[c^2+2\,b\,c+2\,a\,c+b^2+2\,a\,b+a^2\]20. Menyelesaikan operasi yang ditunjukkan
+
+\[(2x^2+12xy-11)+(6x^2-2x+4)+(-x^2-y-2)\]Penyelesaian :
+
+\textgreater\$\&(2*x\textsuperscript{2+12*x*y-11)+(6*x}2-2*x+4)+(-x\^{}2-y-2)
+
+\[12\,x\,y-y+7\,x^2-2\,x-9\]21. Asumsikan bahwa semua variabel dalam eksponen merepresentasikan bilangan asli. Faktorkan
+
+\[25y^{2m}-(x^{2n}-2x^n+1)\]Penyelesaiann :
+
+\textgreater\$\&factor(25*y\textsuperscript{(2*m)-(x}(2*n)-2*x\^{}n+1))
+
+\[\left(5\,y^{m}-x^{n}+1\right)\,\left(5\,y^{m}+x^{n}-1\right)\]22. Asumsikan bahwa semua variabel dalam eksponen merepresentasikan bilangan asli. Faktorkan
+
+\[bdy^2+ady+bcy+ac\]Penyelesaian :
+
+\textgreater\$\&factor(b*d*y\^{}2+a*d*y+b*c*y+a*c)
+
+\[\left(b\,y+a\right)\,\left(d\,y+c\right)\]23. Asumsikan bahwa semua variabel dalam eksponen merepresentasikan
+
+bilangan asli. Faktorkan
+
+\[4x^{2n}-4x^n-3\]Penyelesaian :
+
+\textgreater\$\&factor(b*d*y\^{}2+a*d*y+b*c*y+a*c)
+
+\[\left(b\,y+a\right)\,\left(d\,y+c\right)\]
+
+\backmatter
+\end{document}
